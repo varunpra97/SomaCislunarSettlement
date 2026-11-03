@@ -24,6 +24,8 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 Every construction animation in build order, from the bay factory to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). The highlights at the top of this page come from it; click either preview to open the MP4.
 
 [![How Soma is built](docs/soma-construction-film.gif)](videos/soma-construction-film.mp4)
+https://github.com/varunpra97/SomaCislunarSettlement/blob/main/videos/soma-construction-film.mp4
+
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Construction, step by step
 
