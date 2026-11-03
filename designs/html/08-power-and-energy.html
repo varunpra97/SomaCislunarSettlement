@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Power and Energy</title>
+
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>body{width:2400px;height:1600px;overflow:hidden} h1{font-size:44px !important;letter-spacing:0.24em !important}
+body{margin:0}
+a{color:#d9b36a}a:hover{color:#f0d29a}
+.stars{background-image:radial-gradient(1px 1px at 12% 18%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#ffffff 50%,transparent 51%);background-size:310px 230px,410px 290px,520px 370px}
+.bar{display:grid;grid-template-columns:300px 720px minmax(0,1fr);align-items:center;gap:14px;font-size:13px}
+.bar span{color:#ece6d8}
+.bar i{display:block;height:22px;background:#f0b860}
+.bar em{font-style:normal;color:#f3eee2;font-variant-numeric:tabular-nums;text-align:right}
+.kv{display:grid;grid-template-columns:200px minmax(0,1fr);gap:9px 16px;margin:0;font-size:13px}
+.kv dt{color:#b8ab8e;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding-top:2px}
+.kv dd{margin:0;color:#ece6d8;line-height:1.45}
+</style>
+
+<div class="stars" style="position: relative; width: 2400px; height: 1600px; overflow: hidden; background-color: #0a0b10; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #e8e2d4">
+
+<div style="position: absolute; left: 40px; top: 40px; width: 2320px; height: 130px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px">
+<div style="border: 1px solid #f0b860; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #f0b860">AVERAGE POWER</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈3.4 GW</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">~6 kW per person</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #b8ab8e">PEAK POWER</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈4.5 GW</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">farm lights + daytime use</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #b8ab8e">ENERGY PER DAY</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈81 GWh</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">almost all straight from the Sun</p></div>
+<div style="border: 1px solid #6d8fd6; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #6d8fd6">SOLAR WINGS</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈17 km²</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">6 GW · ~2.9 km² on each spoke</p></div>
+<div style="border: 1px solid #66c2d4; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #66c2d4">BATTERIES</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈6 GWh</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">~37,500 t · 30 district banks</p></div>
+<div style="border: 1px solid #e07a5f; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #e07a5f">RADIATORS</p><p style="margin: 0; font-size: 34px; color: #f3eee2">≈7.3 km²</p><p style="margin: 0; font-size: 12px; color: #b8ab8e">~6 GW of heat · 1.2 km² per spoke</p></div>
+</div>
+
+<section style="position: absolute; left: 40px; top: 190px; width: 1150px; height: 700px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">A</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">WHERE THE POWER GOES · AVERAGE MW</h2>
+</div>
+<div style="padding: 20px 18px; display: flex; flex-direction: column; gap: 14px">
+<div class="bar"><span>Farm lighting (LEDs on ~2/3 of 24 km² of crops)</span><i style="width: 720px"></i><em>1,500</em></div>
+<div class="bar"><span>Homes, shops, civic</span><i style="width: 264px"></i><em>550</em></div>
+<div class="bar"><span>Cooling loops and heat pumps</span><i style="width: 240px"></i><em>500</em></div>
+<div class="bar"><span>Research and industry</span><i style="width: 132px"></i><em>275</em></div>
+<div class="bar"><span style="color: #66c2d4">Air fans (see C)</span><i style="width: 120px; background: #66c2d4"></i><em>250</em></div>
+<div class="bar"><span>Distribution losses (5%)</span><i style="width: 77px; background: #8a806c"></i><em>160</em></div>
+<div class="bar"><span>Transport: trains, lifts, spoke elevators, car charging</span><i style="width: 26px"></i><em>55</em></div>
+<div class="bar"><span>Data and control</span><i style="width: 24px"></i><em>50</em></div>
+<div class="bar"><span>Life-support chemistry (electrolysis, CO₂ capture)</span><i style="width: 14px"></i><em>30</em></div>
+<div class="bar"><span style="color: #5aa6d6">Water treatment and pumping</span><i style="width: 7px; background: #5aa6d6"></i><em>15</em></div>
+<div class="bar" style="border-top: 1px solid #4a4232; padding-top: 12px"><span style="color: #f0b860">Total</span><i style="height: 0"></i><em style="color: #f0b860">≈3,390</em></div>
+<p style="margin: 6px 0 0; font-size: 13px; line-height: 1.55; color: #ece6d8; max-width: 1050px">Growing food is the biggest load, nearly half. Piping more real sunlight into the farm tiers through light pipes is the best way to cut it: halving the LED share would bring the ring down to about 2.6 GW.</p>
+</div>
+</section>
+
+<section style="position: absolute; left: 1210px; top: 190px; width: 1150px; height: 700px; border: 1px solid #2f4a63; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2f4a63">
+<span style="background-color: #6d8fd6; color: #0a1020; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">B</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #6d8fd6">SOLAR WINGS AND RADIATORS ON THE SPOKES</h2>
+</div>
+<svg width="1148" height="330" viewBox="0 0 1148 330" font-family="IBM Plex Mono, monospace" role="img" aria-label="The ring seen from the Sun with solar wings along all six spokes, and a cross-section of one spoke with a flat wing facing the Sun and radiator fins edge-on">
+<circle cx="190" cy="165" r="140" fill="none" stroke="#3a3530" stroke-width="16"/>
+<circle cx="190" cy="165" r="140" fill="none" stroke="#ffd98a" stroke-width="3" stroke-dasharray="8 6"/>
+<g transform="translate(190 165)">
+<g fill="#20335a" stroke="#6d8fd6" stroke-width="1">
+<rect x="22" y="-9" width="104" height="18"/><rect x="22" y="-9" width="104" height="18" transform="rotate(60)"/><rect x="22" y="-9" width="104" height="18" transform="rotate(120)"/><rect x="22" y="-9" width="104" height="18" transform="rotate(180)"/><rect x="22" y="-9" width="104" height="18" transform="rotate(240)"/><rect x="22" y="-9" width="104" height="18" transform="rotate(300)"/>
+</g>
+<g stroke="#f0b860" stroke-width="2"><line x1="20" y1="0" x2="132" y2="0"/><line x1="20" y1="0" x2="132" y2="0" transform="rotate(60)"/><line x1="20" y1="0" x2="132" y2="0" transform="rotate(120)"/><line x1="20" y1="0" x2="132" y2="0" transform="rotate(180)"/><line x1="20" y1="0" x2="132" y2="0" transform="rotate(240)"/><line x1="20" y1="0" x2="132" y2="0" transform="rotate(300)"/></g>
+<circle r="18" fill="#11131b" stroke="#66c2d4" stroke-width="2"/>
+</g>
+<text x="190" y="322" text-anchor="middle" font-size="12" fill="#b8ab8e">AS THE SUN SEES IT · SPIN AXIS POINTS AT THE SUN</text>
+<g transform="translate(560 0)">
+<text x="0" y="24" font-size="12" fill="#ffd98a">SUNLIGHT</text>
+<g stroke="#ffd98a" stroke-width="1.5"><line x1="100" y1="34" x2="100" y2="104"/><line x1="200" y1="34" x2="200" y2="104"/><line x1="300" y1="34" x2="300" y2="104"/><line x1="400" y1="34" x2="400" y2="104"/></g>
+<g fill="#ffd98a"><path d="M94 100 L100 112 L106 100 Z"/><path d="M194 100 L200 112 L206 100 Z"/><path d="M294 100 L300 112 L306 100 Z"/><path d="M394 100 L400 112 L406 100 Z"/></g>
+<rect x="40" y="122" width="420" height="10" fill="#20335a" stroke="#6d8fd6"/>
+<text x="250" y="152" text-anchor="middle" font-size="12" fill="#6d8fd6">SOLAR WING · FLAT TO THE SUN · ~90 m EACH SIDE</text>
+<circle cx="250" cy="196" r="22" fill="#4a4232" stroke="#f0b860" stroke-width="2"/>
+<text x="250" y="200" text-anchor="middle" font-size="10" fill="#f3eee2">SPOKE</text>
+<line x1="250" y1="132" x2="250" y2="174" stroke="#9a917f" stroke-width="3"/>
+<g fill="#e07a5f"><rect x="474" y="96" width="6" height="150"/><rect x="494" y="96" width="6" height="150"/><rect x="514" y="96" width="6" height="150"/><rect x="20" y="96" width="6" height="150" transform="translate(-40 0)"/><rect x="0" y="96" width="6" height="150" transform="translate(-40 0)"/></g>
+<text x="500" y="266" text-anchor="middle" font-size="12" fill="#e07a5f">RADIATOR FINS</text>
+<text x="500" y="282" text-anchor="middle" font-size="12" fill="#e07a5f">EDGE-ON TO THE SUN</text>
+<text x="250" y="250" text-anchor="middle" font-size="11" fill="#b8ab8e">coolant and power cables</text>
+<text x="250" y="266" text-anchor="middle" font-size="11" fill="#b8ab8e">run inside the spoke</text>
+<text x="250" y="322" text-anchor="middle" font-size="12" fill="#b8ab8e">ONE SPOKE IN CROSS-SECTION (NOT TO SCALE)</text>
+</g>
+</svg>
+<div style="padding: 0 18px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<dl class="kv">
+<dt>Why the spokes</dt><dd>With the spin axis aimed at the Sun, each spoke faces it all the time as it turns, so flat wings never need to track. The axis swings about 1° a day to follow the Sun through the year</dd>
+<dt>Wing output</dt><dd>~350 W/m²: 30% cells in full sunlight (1,361 W/m²), less packing and heat losses</dd>
+<dt>Sizing</dt><dd>4.5 GW peak + 0.4 GW battery recharge, +10% ageing, +10% margin ≈ 6 GW</dd>
+</dl>
+<dl class="kv">
+<dt>Per spoke</dt><dd>~2.9 km² of wing: two wings ~90 m wide along ~16 km of spoke, ~1 GW</dd>
+<dt>Mass</dt><dd>~1 kg/m², about 17,000 t in all. Lunar silicon cells (~20%) would need ~26 km²</dd>
+<dt>No slip rings</dt><dd>Wings spin with the ring, so power runs straight down each spoke to a DC ring main in the base</dd>
+<dt>Radiators</dt><dd>~3.4 GW of electricity plus ~2.6 GW of sunlight through the windows ends up as heat: ~7.3 km² of fins at 300 K</dd>
+</dl>
+</div>
+</section>
+
+<section style="position: absolute; left: 40px; top: 910px; width: 820px; height: 540px; border: 1px solid #2f4a50; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2f4a50">
+<span style="background-color: #66c2d4; color: #06181c; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">C</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #66c2d4">AIR FANS · ~250 MW</h2>
+</div>
+<div style="padding: 18px; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #ece6d8">Warm air still rises toward the hub in spin gravity, so convection helps. Fans set the direction and speed so every corner gets fresh air.</p>
+<dl class="kv">
+<dt>Cell fan walls</dt><dd>In each base, pushing air up through the valley at ~0.1 m/s: ~1.1 million m³/s ring-wide at ~50 Pa → ~90 MW</dd>
+<dt>Farm canopy fans</dt><dd>Keep air moving over the crops at 0.3–0.5 m/s → ~120 MW</dd>
+<dt>Return fans and ducts</dt><dd>Pull air from the plenum under the window strip back down behind the homes → ~30 MW</dd>
+<dt>Home ventilation</dt><dd>Heat-recovery units at ~10 L/s per person → ~10 MW</dd>
+<dt>Thin-air note</dt><dd>At 57 kPa, air carries ~40% less heat per m³, so heat leaves by liquid coolant, not by blowing air around</dd>
+</dl>
+</div>
+</section>
+
+<section style="position: absolute; left: 880px; top: 910px; width: 1480px; height: 540px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">D</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">BATTERIES · RIDING THROUGH EARTH'S SHADOW</h2>
+</div>
+<div style="padding: 18px; display: flex; flex-direction: column; gap: 16px">
+<svg width="1440" height="96" viewBox="0 0 1440 96" font-family="IBM Plex Mono, monospace" role="img" aria-label="One 10.3-day orbit drawn as a bar with a 2.5-hour eclipse slice, which is about 1% of the orbit">
+<rect x="0" y="20" width="1200" height="24" fill="#ffd98a" opacity="0.85"/>
+<rect x="594" y="20" width="12" height="24" fill="#0a0b10" stroke="#66c2d4"/>
+<text x="0" y="12" font-size="12" fill="#b8ab8e">ONE ORBIT AROUND EARTH · 10.3 DAYS</text>
+<text x="600" y="64" text-anchor="middle" font-size="12" fill="#66c2d4">EARTH'S SHADOW · up to ~2.1 h (design 2.5 h)</text>
+<text x="1200" y="64" text-anchor="end" font-size="12" fill="#b8ab8e">only in two eclipse seasons a year</text>
+<text x="1220" y="38" font-size="12" fill="#ffd98a">SUN 99% OF THE TIME</text>
+</svg>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<dl class="kv">
+<dt>Orbit</dt><dd>~200,000 km from Earth. Earth's shadow there is ~10,900 km wide; at 1.4 km/s the ring crosses it in ~2.1 h</dd>
+<dt>Night inside</dt><dd>Made by closing the louvres. The wings keep making power through it, so "night" needs no batteries</dd>
+<dt>During an eclipse</dt><dd>Shed to ~1.6 GW: farm LEDs off (plants handle a few dark hours), industry paused, air, water, homes and safety kept on</dd>
+</dl>
+<dl class="kv">
+<dt>Battery size</dt><dd>1.6 GW × 2.5 h = 4 GWh usable → ~6 GWh installed (80% depth, ageing margin)</dd>
+<dt>Mass and place</dt><dd>~37,500 t of LFP cells, as 30 banks of 200 MWh in the district plants, close to the loads</dd>
+<dt>Also covers</dt><dd>A spoke's wings going offline (−1 GW) for hours while loads are shed</dd>
+<dt>Pumped storage?</dt><dd>Lifting water rim to hub stores 85 kJ/kg; 4 GWh needs ~170,000 t at the hub. Too heavy for the spokes, so batteries win</dd>
+</dl>
+</div>
+</div>
+</section>
+
+<div style="position: absolute; left: 40px; top: 1470px; width: 2320px; height: 100px; display: flex; gap: 20px">
+<div style="flex: 1 1 auto; border: 2px solid #e8e2d4; display: flex; align-items: center; padding: 0 40px">
+<h1 style="margin: 0; font-size: 54px; font-weight: 500; letter-spacing: 0.32em; color: #f3eee2; white-space: nowrap">POWER AND ENERGY</h1>
+</div>
+<div style="flex: 0 0 520px; border: 1px solid #4a4232; padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">PRELIMINARY · 550,000 PEOPLE</p>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">ORDER-OF-MAGNITUDE ESTIMATES</p>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

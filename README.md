@@ -1,8 +1,12 @@
-# Cislunar Ring Settlement
+# Soma: Cislunar Ring Settlement
 
 A speculative design study for space settlements: two Sun-orbiting rings (between Earth and Mars, and in the asteroid belt) and a cislunar ring for about 550,000 people, built from Starship-sized hull units, lunar material and a self-assembling bay factory.
 
 All figures are order-of-magnitude estimates for a concept, not engineering results.
+
+## Report
+
+[**Soma: Cost, Deployment and Operations**](docs/soma-report.pdf) (PDF, 31 pages): proof-of-concept milestones, cost, deployment, bootstrapping, power, heat and radiators, air, water, food and waste, and how the systems work together.
 
 ## Videos
 
@@ -30,6 +34,7 @@ Robotic arms unload a Starship, close the ring frame, hang the hull panels, weld
 | **The Chart of Settled Orbits**: the solar system with Helios Ring I (≈1.25 AU), Helios Ring II in the asteroid belt fed by Jupiter, and six cislunar rings. ![](designs/png/01-chart-of-settled-orbits.png) | **Cislunar Ring · Design Study**: 109 km ring, 150 m tube, static regolith shield, ~300 Mt bill of materials and where it comes from. ![](designs/png/02-cislunar-ring-design.png) |
 | **Starship Hull Units**: 84-panel cross-section, 16 panels per Starship, unit catalogue and robotic assembly of one bay. ![](designs/png/03-starship-hull-units.png) | **The Bay Factory**: two 180 m rail rings and telescoping beams, 7 Starship flights to deploy, self-assembly and the inchworm cycle. ![](designs/png/04-bay-factory.png) |
 | **Settlement Cells**: 45 levels per cell, 11 cell types including leisure (great outdoors, waterfront, food and night, parks and sports), a 20-cell district, and the cell mix. ![](designs/png/05-settlement-cells.png) | **Life Support**: air, water, food and waste loops, lunar make-up, light, heat and power, and safety. ![](designs/png/06-life-support.png) |
+| **Landscape and Water**: hollow filter mountains and the district water loop. ![](designs/png/07-landscape-and-water.png) | **Power and Energy**: spoke solar wings, batteries, loads and air movement. ![](designs/png/08-power-and-energy.png) |
 
 Full-size PNGs are in [`designs/png`](designs/png); standalone HTML versions are in [`designs/html`](designs/html).
 
