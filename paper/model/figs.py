@@ -3,7 +3,7 @@ import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, Rectangle, Circle, Polygon, FancyArrowPatch, Wedge
 D=json.load(open('ops.json'))
-BG='#0a0b10'; PAN='#11131b'; FG='#ece6d8'; MUT='#b8ab8e'; GOLD='#f0b860'; CY='#66c2d4'; LINE='#2c2a24'; NAVY='#3a5f80'
+BG='#ffffff'; PAN='#f7f5f0'; FG='#1f2330'; MUT='#6b6252'; GOLD='#b07a1e'; CY='#2a8fa5'; LINE='#d8d2c4'; NAVY='#a9c2d6'
 plt.rcParams.update({'font.family':'DejaVu Sans Mono','font.size':11,'text.color':FG,'axes.labelcolor':FG,'xtick.color':MUT,'ytick.color':FG,
   'axes.edgecolor':LINE,'figure.facecolor':BG,'axes.facecolor':BG,'savefig.facecolor':BG})
 OUT='../figures/'
@@ -19,7 +19,7 @@ for i,r in enumerate(rows):
     ax.text(r['cons']+18,i,f"${r['opt']:.0f}–{r['cons']:.0f}M   ×{r['count']}",va='center',color=FG,fontsize=10)
 ax.set_yticks(list(y)); ax.set_yticklabels([r['type'] for r in rows])
 ax.set_xlim(0,1020); ax.set_xlabel('Build cost per cell, $ million')
-ax.grid(axis='x',color='#1d2029'); ax.set_axisbelow(True)
+ax.grid(axis='x',color='#e8e4da'); ax.set_axisbelow(True)
 for s in ('top','right'): ax.spines[s].set_visible(False)
 ax.plot([],[],'o',color=GOLD,label='optimistic'); ax.plot([],[],'o',color=CY,label='conservative')
 ax.legend(loc='lower right',frameon=False,labelcolor=FG)
@@ -31,7 +31,7 @@ rows=D['rows']
 fig,(a1,a2)=plt.subplots(1,2,figsize=(11,5.2),gridspec_kw=dict(width_ratios=[1.6,1]))
 names=[r['type'] for r in rows]; yy=range(len(rows))
 left=[0]*len(rows)
-for key,lab,col in (('struct_kt','decks and frames',  '#c7b89a'),('soil_kt','soil','#6f8b52'),('water_kt','water',CY)):
+for key,lab,col in (('struct_kt','decks and frames',  '#9a8a68'),('soil_kt','soil','#6f8b52'),('water_kt','water',CY)):
     vals=[r[key] for r in rows]; a1.barh(list(yy),vals,left=left,color=col,label=lab,height=.62)
     left=[l+v for l,v in zip(left,vals)]
 a1.set_yticks(list(yy)); a1.set_yticklabels(names); a1.invert_yaxis()
@@ -40,7 +40,7 @@ a1.set_title('Interior, per cell (all lunar)',loc='left',color=GOLD)
 a2.barh(list(yy),[r['kit_t'] for r in rows],color=GOLD,height=.62); a2.set_yticks(list(yy)); a2.set_yticklabels([]); a2.invert_yaxis()
 a2.set_xlabel('Earth kit per cell, t'); a2.set_title('Earth-made kit, per cell',loc='left',color=GOLD)
 for a in (a1,a2):
-    a.grid(axis='x',color='#1d2029'); a.set_axisbelow(True)
+    a.grid(axis='x',color='#e8e4da'); a.set_axisbelow(True)
     for s in ('top','right'): a.spines[s].set_visible(False)
 fig.text(0.01,-0.03,'Every cell also carries an equal share of the shell: ~465 kt of regolith shield, basalt-fibre hoop bands, aluminium hull and glass.',color=MUT,fontsize=10)
 save(fig,'mass_per_cell.png')
@@ -61,7 +61,7 @@ for i,(lab,(lo,hi)) in enumerate(items):
 ax.set_xscale('log'); ax.set_xlim(150,2.5e5)
 ax.set_yticks(range(len(items))); ax.set_yticklabels([i[0] for i in items],fontsize=9.5); ax.invert_yaxis()
 ax.set_xlabel('Starship launches, including tanker flights (log scale)')
-ax.grid(axis='x',color='#1d2029',which='both'); ax.set_axisbelow(True)
+ax.grid(axis='x',color='#e8e4da',which='both'); ax.set_axisbelow(True)
 for s in ('top','right'): ax.spines[s].set_visible(False)
 ax.set_title('Starship launches by stage',loc='left',color=GOLD,fontsize=13)
 save(fig,'launches.png')
@@ -80,10 +80,10 @@ prc=[('Dig, sieve, magnets\n40 Mt/yr feed',5.4),('Basalt melt 1,500 °C\nand fib
 prd=[('Shield fines ~26 Mt/yr',5.5),('Basalt fibre 1.8 Mt/yr',4.55),('Aluminium 0.4 Mt/yr\nglass 0.1 Mt/yr',3.6),('Oxygen (by-product)',2.65),('Water 0.5 Mt/yr',1.75),('N₂, carbon, Earth kit',0.7)]
 dst=[('Regolith shield\n260 Mt/ring',5.3),('Hoop bands + spokes\n18 Mt/ring',4.15),('Hull panels + windows\n5 Mt/ring',3.0),('Air, water, soil\n~21 Mt/ring',1.85),('Life support, labs,\nelectronics',0.7)]
 H=0.78
-for t,y in src: box(cols[0],y-H/2,W,H,t,'#c7b89a')
+for t,y in src: box(cols[0],y-H/2,W,H,t,'#9a8a68')
 for t,y in prc: box(cols[1],y-H/2,W+0.2,H,t,CY,10)
 for t,y in prd: box(cols[2],y-0.34,W+0.3,0.68,t,GOLD,10)
-for t,y in dst: box(cols[3],y-H/2,W,H,t,'#e6b85c')
+for t,y in dst: box(cols[3],y-H/2,W,H,t,'#c9962e')
 S=dict(src); P=dict(prc); R=dict(prd); T=dict(dst)
 e=lambda a,b,ya,yb,c=MUT: arrow(cols[a]+(W if a==0 else W+0.2 if a==1 else W+0.3),ya,cols[b],yb,c)
 e(0,1,S['Mare regolith\n(basalt plains)'],P['Dig, sieve, magnets\n40 Mt/yr feed'])
