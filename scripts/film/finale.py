@@ -81,7 +81,7 @@ def titlecard(ctx,t,dur):
     ctx.push_group(); LG.mark(ctx,630,300,k=.9,th=LG.DARK); ctx.pop_group_to_source(); ctx.paint_with_alpha(a)
     LG.word(ctx,640,560,44,a=seg(t,.8,1.8),anchor='c',sub='HOW IT IS BUILT')
     fade(ctx,t,dur,fi=.4,fo=.6)
-CH=[('1','THE SPINE AND CENTRE PODS','280 Starships docked nose to tail, later wrapped in drums'),
+CH=[('1','THE SPINE AND CENTRE PODS','280 Starships docked nose to tail, then wrapped in drums'),
     ('2','THE BAY FACTORY','the machine that builds the tube, 18 m at a time'),
     ('3','BUILDING THE TUBE','panels from Starships, welded and sealed bay by bay'),
     ('4','SPOKES AND THE MIDDLE RING','six spokes in balanced pairs, then a 0.5 g ring halfway out'),
