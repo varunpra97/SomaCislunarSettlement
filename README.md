@@ -8,8 +8,8 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 
 Click a preview to open the full MP4.
 
-### A day on the ring (77 s)
-What living there feels like: dawn from a roof garden, the commute, a spoke elevator to low gravity, the farm cells, the waterfront, the night market, life support at night, and the ring from outside.
+### A day on the ring (91 s)
+What living there feels like: dawn over a valley of terrace homes, every home on a top floor, a Roadster driving straight up a block's climb lane to its terrace, the commute, a spoke elevator to low gravity, the farm cells, the waterfront, the night market, life support at night, and the ring from outside.
 
 [![A day on the ring](docs/day-on-the-ring.gif)](videos/day-on-the-ring.mp4)
 
@@ -39,7 +39,7 @@ Full-size PNGs are in [`designs/png`](designs/png); standalone HTML versions are
 |---|---|
 | Ring | 109 km around, 17.35 km radius, 1 g at 0.23 rpm |
 | Tube | 150 m across, 45 levels of 3.33 m, 606 cells of 180 m |
-| Population | ≈550,000; 30% of the ring is leisure cells |
+| Population | ≈550,000 with stacked homes; terrace homes (every home a top floor) hold ~850 people per cell instead of ~3,600 |
 | Atmosphere | 57 kPa, 34% O₂ (NASA exploration atmosphere) |
 | Mass | ~300 Mt for the first design, mostly lunar regolith; denser cells add ~80 Mt of basalt-fibre hoop bands |
 | Hull | ≈509,000 panels; ~36,000 Starship flights if all from Earth, so later rings use lunar aluminium |
@@ -57,4 +57,4 @@ animation/         interactive ring-assembly animation (HTML)
 scripts/           Python (pycairo) scripts that render the videos and cell drawings
 ```
 
-To re-render the videos: `pip install pycairo`, have `ffmpeg` on the path, then run `python scripts/vid.py all` (bay factory) or `python scripts/life.py all` (a day on the ring) and join the scene files with ffmpeg's concat demuxer.
+To re-render the videos: `pip install pycairo`, have `ffmpeg` on the path, then run `python scripts/vid.py all` (bay factory) or `python scripts/life2.py all` (a day on the ring) and join the scene files with ffmpeg's concat demuxer.
