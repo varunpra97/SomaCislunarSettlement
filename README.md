@@ -19,27 +19,27 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> The film: how Soma is built
 
-Every construction animation in build order, from the bay factory to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). It plays at the top of this page; click the preview below to open the MP4 file.
+Every construction animation in build order, from the spine to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). It plays at the top of this page; click the preview below to open the MP4 file.
 
 [![How Soma is built](docs/soma-construction-film.gif)](videos/soma-construction-film.mp4)
 
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Construction, step by step
 
-### 1 · The bay factory (66 s)
+### 1 · The spine and centre pods (52 s)
+A cargo Starship sets out the spine core; tug Starships latch onto its ends and steer it while extruders grow it to 14 km. Robot arms then build a 400 m centre pod (magnetic bearings, motor ring, spoke sockets) for each ring.
+
+[![The centre pod and the spine](docs/centre-pod-and-spine.gif)](videos/centre-pod-and-spine.mp4)
+
+### 2 · The bay factory (66 s)
 The hub Starship arrives, the work ring grows segment by segment, the gripper ring and beams go on, fit-out, then the inchworm cycle that moves the factory 18 m per bay.
 
 [![The bay factory](docs/bay-factory.gif)](videos/bay-factory.mp4)
 
-### 2 · Building the tube (57 s)
+### 3 · Building the tube (57 s)
 Robotic arms unload a Starship, close the ring frame, hang the hull panels, weld and leak-test one bay, then advance. The interactive version is in [`animation/ring-assembly.html`](animation/ring-assembly.html).
 
 [![Ring assembly sequence](docs/ring-assembly.gif)](videos/ring-assembly.mp4)
-
-### 3 · The spine and centre pods (52 s)
-A cargo Starship sets out the spine core; tug Starships latch onto its ends and steer it while extruders grow it to 14 km. Robot arms then build a 400 m centre pod (magnetic bearings, motor ring, spoke sockets) for each ring.
-
-[![The centre pod and the spine](docs/centre-pod-and-spine.gif)](videos/centre-pod-and-spine.mp4)
 
 ### 4 · Spokes and the middle ring (48 s)
 Six crawlers lay basalt-fibre spokes 17.35 km out in balanced pairs; small bay factories then close a 40 m middle ring at half radius (0.5 g).
