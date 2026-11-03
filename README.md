@@ -31,20 +31,20 @@ The hub Starship arrives, the work ring grows segment by segment, the gripper ri
 
 [![The bay factory](docs/bay-factory.gif)](videos/bay-factory.mp4)
 
-### 2 · The spine and centre pods (52 s)
+### 2 · Building the tube (57 s)
+Robotic arms unload a Starship, close the ring frame, hang the hull panels, weld and leak-test one bay, then advance. The interactive version is in [`animation/ring-assembly.html`](animation/ring-assembly.html).
+
+[![Ring assembly sequence](docs/ring-assembly.gif)](videos/ring-assembly.mp4)
+
+### 3 · The spine and centre pods (52 s)
 A cargo Starship sets out the spine core; tug Starships latch onto its ends and steer it while extruders grow it to 14 km. Robot arms then build a 400 m centre pod (magnetic bearings, motor ring, spoke sockets) for each ring.
 
 [![The centre pod and the spine](docs/centre-pod-and-spine.gif)](videos/centre-pod-and-spine.mp4)
 
-### 3 · Spokes and the middle ring (48 s)
+### 4 · Spokes and the middle ring (48 s)
 Six crawlers lay basalt-fibre spokes 17.35 km out in balanced pairs; small bay factories then close a 40 m middle ring at half radius (0.5 g).
 
 [![Spokes and middle ring](docs/spokes-and-middle-ring.gif)](videos/spokes-and-middle-ring.mp4)
-
-### 4 · Building the tube (57 s)
-Robotic arms unload a Starship, close the ring frame, hang the hull panels, weld and leak-test one bay, then advance. The interactive version is in [`animation/ring-assembly.html`](animation/ring-assembly.html).
-
-[![Ring assembly sequence](docs/ring-assembly.gif)](videos/ring-assembly.mp4)
 
 ### 5 · Solar wings and radiators (50 s)
 Wing robots unroll 90 m blankets of lunar-made cells along each spoke (17 km², ~6 GW); fin carriers on the shield fit one 150 × 75 m radiator per cell (~650 in all).
