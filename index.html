@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soma: CisLunar Rings</title>
+<meta name="description" content="Soma is a speculative design study for a cislunar ring settlement: six 109 km rings on one spine, about 3.3 million people, in a stable loop around the Moon.">
+<meta property="og:title" content="Soma: CisLunar Rings">
+<meta property="og:description" content="Six 109 km rings on one spine, ~3.3 million people, looping the Moon. A speculative design study.">
+<meta property="og:image" content="https://varunpra97.github.io/SomaCislunarSettlement/poster/soma-poster-x.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/logo/soma-mark-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#0a0b10;--panel:#11131b;--line:#2c2a24;--fg:#ece6d8;--mut:#b8ab8e;--gold:#f0b860;--teal:#66c2d4}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+a{color:var(--teal)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left))}
+header{padding:56px 0 24px;text-align:center}
+header img.logo{width:min(300px,60vw)}
+h1{font:600 clamp(30px,5vw,48px)/1.1 "IBM Plex Mono",monospace;letter-spacing:.08em;margin:10px 0 8px}
+.sub{color:var(--mut);font:400 15px/1.4 "IBM Plex Mono",monospace;letter-spacing:.14em;text-transform:uppercase}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 8px}
+.links a{border:1px solid var(--line);padding:8px 14px;text-decoration:none;color:var(--fg);font:500 14px "IBM Plex Mono",monospace;letter-spacing:.06em}
+.links a:hover{border-color:var(--gold);color:var(--gold)}
+.hero{margin:22px auto 8px;max-width:1400px;padding:0 max(18px,env(safe-area-inset-left))}
+.hero img{width:100%;display:block;border:1px solid var(--line)}
+.cap{color:var(--mut);font-size:14px;margin:8px 0 0;text-align:center}
+section{padding:40px 0;border-top:1px solid #1b1d26}
+h2{font:600 15px "IBM Plex Mono",monospace;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+p{max-width:68ch}
+.lead{font-size:20px;max-width:60ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:26px 0 0}
+.stat{border-left:3px solid var(--gold);padding:4px 14px}
+.stat b{display:block;font:600 26px "IBM Plex Mono",monospace}
+.stat span{color:var(--mut);font-size:13px;text-transform:uppercase;letter-spacing:.1em}
+figure{margin:24px 0}
+figure img,video{width:100%;display:block;border:1px solid var(--line);background:#000}
+figcaption{color:var(--mut);font-size:14px;margin-top:8px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.two>*{min-width:0}
+ul,ol{padding-left:1.2em;max-width:72ch}
+li{margin:6px 0}
+li b{color:var(--fg)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+td,th{border-bottom:1px solid #22242e;padding:9px 10px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:500;width:32%}
+.tbl{overflow-x:auto}
+.note{color:var(--mut);font-size:14px}
+footer{padding:36px 0 60px;color:var(--mut);font-size:14px;border-top:1px solid #1b1d26;text-align:center}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <img class="logo" src="assets/logo/soma-logo-dark.png" alt="Soma logo: a ring looping the Moon while the Moon circles Earth">
+  <h1>CisLunar Rings</h1>
+  <div class="sub">A speculative design study for a ring settlement around the Moon</div>
+  <nav class="links">
+    <a href="#film">Film</a>
+    <a href="paper/soma-cislunar-rings.pdf">Paper (PDF)</a>
+    <a href="poster/soma-poster-60x36in.pdf">Poster (PDF)</a>
+    <a href="https://github.com/varunpra97/SomaCislunarSettlement">GitHub</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="poster/soma-poster-animated.gif" alt="Animated Soma poster: every tile plays its build step on an 8-second loop">
+  <p class="cap">The Soma poster, animated: every tile plays its build step. <a href="poster/soma-poster-animated-3840.gif">Full-size GIF</a> · <a href="poster/soma-poster-x.jpg">still image</a></p>
+</div>
+
+<main class="wrap">
+<section>
+  <h2>Summary</h2>
+  <p class="lead">Six rings, each 109&nbsp;km around, on one shared spine: about 3.3 million people, parked in a stable loop around the Moon.</p>
+  <p>Each ring is built mostly from lunar material by self-assembling bay factories, at an estimated $87k–661k of build cost per resident. All figures are order-of-magnitude estimates for a concept, not engineering results.</p>
+  <div class="stats">
+    <div class="stat"><b>550,000</b><span>people per ring</span></div>
+    <div class="stat"><b>3.3 M</b><span>per six-ring stack</span></div>
+    <div class="stat"><b>1 g</b><span>at 0.23 rpm</span></div>
+    <div class="stat"><b>30,000 km</b><span>loop around the Moon</span></div>
+    <div class="stat"><b>$87–661k</b><span>build cost per resident</span></div>
+  </div>
+</section>
+
+<section id="film">
+  <h2>How Soma is built</h2>
+  <video controls preload="metadata" poster="docs/soma-construction-film.gif" playsinline>
+    <source src="videos/soma-construction-film.mp4" type="video/mp4">
+  </video>
+  <p class="cap">The construction film, 5 min 57 s: the spine, the bay factory, the tube, spokes, wings and radiators, the ring stack, and the zoom out to the orbit. <a href="videos/soma-construction-film.mp4">Download the MP4</a></p>
+  <ol>
+    <li><b>The spine.</b> Cargo Starships unload, then dock nose to tail along the spin axis; the ships at each end keep their engines to steer.</li>
+    <li><b>Thicken.</b> Concentric drums are wrapped over the Starship core so it can carry Sun-tracking loads once the rings spin.</li>
+    <li><b>Centre pods.</b> Six pods are built over the fixed spine one by one. They turn freely on magnetic bearings; real spin waits until the ring is attached.</li>
+    <li><b>Factory setup.</b> Seven Starship flights bring two rail rings, six beams, grippers and weld crawlers for each bay factory.</li>
+    <li><b>Hanging the panels.</b> A loading arm unloads hull panels from a Starship; carts run them around the factory jig to hang.</li>
+    <li><b>Building the tube.</b> The factory grips the tube, welds and leak-tests one 18&nbsp;m bay, then inchworms forward.</li>
+    <li><b>Spokes.</b> Origami links of basalt fibre unfold from the pod and the tube's connector cell and lock mid-span, in balanced pairs.</li>
+    <li><b>Wings and fins.</b> Wing robots unroll 17&nbsp;km² of lunar-made solar cells along the spokes; carriers fit one radiator fin per cell.</li>
+    <li><b>Half-built torus to full ring.</b> Six factories build tube both ways from the spokes; the 12 fronts meet after 6,060 bays and the ring closes.</li>
+  </ol>
+  <figure><img src="paper/figures/build.jpg" alt="The nine build steps, from the spine to the half-built torus"><figcaption>The nine build steps.</figcaption></figure>
+  <figure><img src="paper/figures/lunar.jpg" alt="On the Moon: regolith to basalt fibre to the mass driver"><figcaption>On the Moon, robots collect regolith, plants draw basalt into fibre, and a mass driver throws packets at 2.4&nbsp;km/s to a catcher near Soma (~30&nbsp;Mt a year).</figcaption></figure>
+</section>
+
+<section>
+  <h2>The design</h2>
+  <p>Each ring is a 150&nbsp;m-wide tube bent into a 17.35&nbsp;km-radius torus that spins at 0.23&nbsp;rpm for 1&nbsp;g at the floor.</p>
+  <div class="two">
+    <figure><img src="paper/figures/onering.jpg" alt="One ring and how it's made"><figcaption>One ring and how it's made.</figcaption></figure>
+    <ul>
+      <li><b>Tube and shield.</b> Basalt-fibre hoop bands carry the spin; steel would need 1.3&nbsp;GPa and is too heavy. A static regolith shell (~260&nbsp;Mt) shields against radiation.</li>
+      <li><b>Cells.</b> 606 cells of 180&nbsp;m in 30 districts, 45 levels each, of 11 types.</li>
+      <li><b>Step terraces.</b> Every cell where people live or work steps back from a central canyon, so each level has open sky.</li>
+      <li><b>Spine.</b> 280 Starships docked into a 14&nbsp;km core, wrapped in five concentric drums (~1.4&nbsp;Mt).</li>
+      <li><b>Spokes.</b> Spin pulls ~0.23&nbsp;GPa on a spoke; basalt fibre holds ~1.5&nbsp;GPa.</li>
+      <li><b>Stack.</b> Three counter-rotating pairs, 2&nbsp;km apart: no net spin, steered like a gyroscope to face the Sun.</li>
+      <li><b>Power and heat.</b> ~6&nbsp;GW from wings on the spokes; ~650 radiator fins shed heat edge-on.</li>
+      <li><b>Transit.</b> District trains run through the hardware base at ~70&nbsp;km/h.</li>
+    </ul>
+  </div>
+  <figure><img src="paper/figures/cells.jpg" alt="The 11 cell types in cross-section"><figcaption>The 11 cell types in cross-section, with step terraces wherever people live.</figcaption></figure>
+  <figure><img src="paper/figures/transit.jpg" alt="Land, water and transit"><figcaption>Hollow mountains filter the water; district trains link all 30 districts.</figcaption></figure>
+</section>
+
+<section>
+  <h2>Orbit</h2>
+  <p>Soma sits in a lunar distant retrograde orbit about 30,000&nbsp;km from the Moon, looping it backwards every 4.7 days while the Moon carries it around Earth. In a simplified Earth–Moon–Sun model it stayed bound for 20 years with no corrections, even with a 2&nbsp;m/s kick each time a ring was added. The Soma logo is drawn from this orbit.</p>
+  <figure><img src="paper/figures/orbit.jpg" alt="Soma's loop around the Moon, top-down with Earth fixed"><figcaption>Soma's loop around the Moon, top-down with Earth fixed.</figcaption></figure>
+</section>
+
+<section>
+  <h2>Cost per resident</h2>
+  <p>Build cost per resident falls from $168k–661k for ring 1 to $87k–502k for ring 100, as later rings reuse the lunar industry and factories and Earth-made parts get cheaper. A standalone ring costs about $89–356B; 100 rings total about $5.2T to $28.7T.</p>
+</section>
+
+<section>
+  <h2>Key numbers</h2>
+  <div class="tbl"><table>
+    <tr><th>Ring</th><td>109 km around, 17.35 km radius, 1 g at 0.23 rpm</td></tr>
+    <tr><th>Tube</th><td>150 m across, 45 levels of 3.33 m, 606 cells of 180 m</td></tr>
+    <tr><th>Population</th><td>~550,000 per ring; ~3.3 million per six-ring stack</td></tr>
+    <tr><th>Atmosphere</th><td>57 kPa, 34% O₂</td></tr>
+    <tr><th>Mass per ring</th><td>~300 Mt, mostly lunar regolith</td></tr>
+    <tr><th>Spine</th><td>280 Starships (14 km core) + 5 drums to r 100 m, ~1.4 Mt</td></tr>
+    <tr><th>Middle ring</th><td>r 8.7 km, 0.5 g, Ø 40 m</td></tr>
+    <tr><th>Stack</th><td>6 rings, 3 counter-rotating pairs, 2 km apart</td></tr>
+    <tr><th>Power</th><td>~6 GW per ring from spoke wings</td></tr>
+    <tr><th>Orbit</th><td>Lunar DRO, ~30,000 km, 4.7-day loop</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>More</h2>
+  <ul>
+    <li><a href="paper/soma-cislunar-rings.pdf">Paper: Soma: CisLunar Rings</a> (6 pages) · <a href="paper/">LaTeX source</a></li>
+    <li><a href="poster/soma-poster-60x36in.pdf">Poster, 60 × 36 in print PDF</a></li>
+    <li><a href="docs/soma-report.pdf">Report: cost, deployment and operations</a> (36 pages)</li>
+    <li><a href="https://github.com/varunpra97/SomaCislunarSettlement">Source, videos and render scripts on GitHub</a></li>
+  </ul>
+  <p class="note">Order-of-magnitude estimates · speculative design study · illustrations not to scale.</p>
+</section>
+</main>
+
+<footer>Soma · a cislunar ring settlement · Varun Prakash, 2026</footer>
+</body>
+</html>

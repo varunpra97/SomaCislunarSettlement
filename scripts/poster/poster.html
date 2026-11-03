@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Soma Poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap">
+<style>
+@page { size: 60in 36in; margin: 0 }
+html,body{margin:0;background:#0a0b10}
+.poster{position:relative;width:3600px;height:2160px;overflow:hidden;background-color:#0a0b10;color:#e8e2d4;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  background-image:radial-gradient(1px 1px at 12% 18%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 83% 61%,#fff3d6 50%,transparent 51%),radial-gradient(1px 1px at 52% 91%,#ffffff 50%,transparent 51%);
+  background-size:310px 230px,410px 290px,520px 370px,270px 330px,460px 250px}
+.panel{position:absolute;border:1.5px solid #4a4232;display:flex;flex-direction:column}
+.panel.cy{border-color:#2f4a50}
+.ph{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1.5px solid #4a4232;flex:0 0 auto}
+.panel.cy .ph{border-bottom-color:#2f4a50}
+.tagl{background:#f0b860;color:#1a1206;font-size:17px;font-weight:600;padding:3px 10px;letter-spacing:.1em}
+.panel.cy .tagl{background:#66c2d4;color:#06181c}
+.ph h2{margin:0;font-size:20px;font-weight:600;letter-spacing:.16em;color:#f0b860;text-transform:uppercase}
+.panel.cy .ph h2{color:#66c2d4}
+.pb{padding:16px 18px;display:flex;flex-direction:column;gap:14px;min-height:0}
+.pb img{display:block;width:100%;height:auto}
+.cells{display:grid;grid-template-columns:repeat(6,1fr);gap:8px 10px}
+.cell{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2px}
+.cell img{width:126px;height:auto}
+.cell b{font-size:17px;letter-spacing:.1em}
+.cell span{font-size:15px;line-height:1.25;color:#ece6d8}
+.cell.key{justify-content:center;border:1px solid #2c2a24;padding:8px}
+.cell.key b{color:#f0b860}
+.fig{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.fig img{width:100%;height:auto;max-height:220px;object-fit:contain}
+.fig figcaption{font-size:16px;line-height:1.4;color:#ece6d8}
+.note{margin:0;font-size:17px;line-height:1.5;color:#ece6d8}
+.quiet{color:#b8ab8e}
+.kv{display:grid;grid-template-columns:210px minmax(0,1fr);gap:10px 18px;margin:0;font-size:18px}
+.kv dt{color:#b8ab8e;font-size:16px;letter-spacing:.12em;text-transform:uppercase;padding-top:3px}
+.kv dd{margin:0;color:#ece6d8;line-height:1.35}
+.row{display:flex;gap:18px;align-items:flex-start}
+.row>*{flex:1 1 0;min-width:0}
+.strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.step img{border:1px solid #2c2a24;height:210px;object-fit:cover}
+.step h3{margin:12px 0 6px;font-size:18px;letter-spacing:.12em;color:#f0b860;font-weight:600}
+.step h3 b{display:inline-flex;width:30px;height:30px;border-radius:15px;background:#f0b860;color:#1a1206;align-items:center;justify-content:center;font-size:16px;margin-right:10px}
+.step p{margin:0;font-size:15px;line-height:1.45;color:#ece6d8}
+.watermark{position:absolute;left:50%;top:520px;width:1560px;height:1560px;transform:translateX(-50%);opacity:.11;z-index:50;pointer-events:none;background:url(img/watermark.png) center/contain no-repeat}
+.big{font-size:44px;font-weight:600;color:#f0b860;line-height:1}
+.chips{display:flex;gap:28px}
+.chip{border-left:3px solid #f0b860;padding-left:12px}
+.chip .v{font-size:30px;font-weight:600;color:#f3eee2}
+.chip .k{font-size:16px;letter-spacing:.12em;color:#b8ab8e;text-transform:uppercase;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="poster">
+
+<!-- header band: the chart of settled orbits -->
+<div style="position:absolute;left:40px;top:40px;width:3520px;height:470px;border:1.5px solid #4a4232;overflow:hidden">
+  <svg viewBox="0 0 3520 470" width="3520" height="470" role="img" aria-label="Settlements named after the bodies they orbit, from Ravi around the Sun to Yama around Pluto" style="display:block">
+<defs>
+<radialGradient id="gSun" cx="0.92" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffb35c"/><stop offset="0.85" stop-color="#e8762e"/><stop offset="1" stop-color="#c4561f"/></radialGradient>
+<radialGradient id="gMe" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#e6c79a"/><stop offset="1" stop-color="#9a7a4e"/></radialGradient>
+<radialGradient id="gVe" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#ffe29a"/><stop offset="1" stop-color="#d79a2e"/></radialGradient>
+<radialGradient id="gEa" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#7cc4ef"/><stop offset=".6" stop-color="#2f7fbf"/><stop offset="1" stop-color="#174a7a"/></radialGradient>
+<radialGradient id="gMo" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#f2f0ea"/><stop offset="1" stop-color="#9c998f"/></radialGradient>
+<radialGradient id="gMa" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#f08a5a"/><stop offset="1" stop-color="#a8381c"/></radialGradient>
+<radialGradient id="gJu" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#f3d9b5"/><stop offset="1" stop-color="#c99a6a"/></radialGradient>
+<radialGradient id="gSa" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#fbe7cc"/><stop offset="1" stop-color="#d9b48a"/></radialGradient>
+<radialGradient id="gUr" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#c9f0f2"/><stop offset="1" stop-color="#6fbfcb"/></radialGradient>
+<radialGradient id="gNe" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#7d9be8"/><stop offset="1" stop-color="#2d4aa3"/></radialGradient>
+<radialGradient id="gPl" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#e9dccb"/><stop offset="1" stop-color="#9e8a74"/></radialGradient>
+<radialGradient id="gSh" cx=".3" cy=".3" r=".9"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></radialGradient>
+<clipPath id="cJu"><circle cx="1980" cy="228" r="112"/></clipPath>
+<clipPath id="cSaF"><rect x="2300" y="228" width="520" height="200"/></clipPath>
+</defs>
+<circle cx="-560" cy="228" r="980" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="1210" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="1510" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="1860" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="2540" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="3120" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="3560" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="3810" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="-560" cy="228" r="4015" fill="none" stroke="#a99f88" stroke-opacity=".22" stroke-width="1.4"/>
+<circle cx="1576" cy="410" r="2.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1529" cy="308" r="2.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1542" cy="147" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1554" cy="186" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1542" cy="90" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1589" cy="248" r="1.9" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1577" cy="457" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1581" cy="431" r="2.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1569" cy="393" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1553" cy="220" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1590" cy="198" r="1.9" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1585" cy="401" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1518" cy="97" r="2.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1571" cy="231" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1564" cy="295" r="1.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1521" cy="237" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1575" cy="402" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1511" cy="411" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1558" cy="55" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1513" cy="11" r="2.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1536" cy="392" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1512" cy="463" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1513" cy="371" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1533" cy="315" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1508" cy="107" r="1.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1535" cy="429" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1581" cy="426" r="2.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1570" cy="207" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1561" cy="88" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1512" cy="291" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1588" cy="41" r="2.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1563" cy="234" r="2.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1523" cy="187" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1557" cy="323" r="2.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1563" cy="42" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1502" cy="160" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1563" cy="29" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1508" cy="27" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1552" cy="201" r="1.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1553" cy="9" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1589" cy="406" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1550" cy="290" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1542" cy="247" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1497" cy="453" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1555" cy="67" r="2.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1544" cy="160" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1520" cy="294" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1526" cy="132" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1499" cy="418" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1556" cy="146" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1574" cy="147" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1582" cy="337" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1555" cy="440" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1547" cy="120" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1572" cy="50" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1578" cy="71" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1541" cy="46" r="1.7" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1545" cy="470" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1514" cy="166" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1596" cy="343" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1520" cy="26" r="2.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1568" cy="181" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1511" cy="258" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1545" cy="392" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1589" cy="198" r="2.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1578" cy="285" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1518" cy="236" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1534" cy="387" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1570" cy="207" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1525" cy="413" r="2.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1521" cy="319" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1540" cy="388" r="2.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1551" cy="469" r="1.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1587" cy="406" r="2.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1497" cy="463" r="2.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1512" cy="411" r="1.9" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1507" cy="455" r="1.2" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1561" cy="178" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1556" cy="203" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1500" cy="217" r="2.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1557" cy="423" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1564" cy="102" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1499" cy="417" r="1.3" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1564" cy="446" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1556" cy="448" r="2.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1538" cy="201" r="1.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1501" cy="271" r="2.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1536" cy="257" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1528" cy="340" r="1.8" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1494" cy="469" r="1.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1553" cy="454" r="2.0" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1507" cy="327" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1577" cy="327" r="1.5" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1523" cy="196" r="1.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1498" cy="465" r="1.6" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1532" cy="91" r="1.1" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1538" cy="71" r="2.4" fill="#8a7e6a" fill-opacity=".75"/>
+<circle cx="1592" cy="183" r="2.0" fill="#8a7e6a" fill-opacity=".75"/>
+<text x="1550" y="452" text-anchor="middle" font-size="16" fill="#8a7e6a" letter-spacing="3" font-family="IBM Plex Mono, monospace">ASTEROID BELT</text>
+<circle cx="-560" cy="228" r="700" fill="url(#gSun)"/>
+<circle cx="420" cy="228" r="11" fill="url(#gMe)"/>
+<circle cx="420" cy="228" r="11" fill="url(#gSh)" clip-path="none"/>
+<text x="420" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">MERCURY</text>
+<circle cx="650" cy="228" r="20" fill="url(#gVe)"/>
+<circle cx="650" cy="228" r="20" fill="url(#gSh)" clip-path="none"/>
+<text x="650" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">VENUS</text>
+<circle cx="950" cy="228" r="27" fill="url(#gEa)"/>
+<circle cx="950" cy="228" r="27" fill="url(#gSh)" clip-path="none"/>
+<text x="950" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">EARTH</text>
+<circle cx="1300" cy="228" r="17" fill="url(#gMa)"/>
+<circle cx="1300" cy="228" r="17" fill="url(#gSh)" clip-path="none"/>
+<text x="1300" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">MARS</text>
+<circle cx="1980" cy="228" r="112" fill="url(#gJu)"/>
+<rect x="1868" y="158" width="224" height="18" fill="#c98d5e" fill-opacity=".55" clip-path="url(#cJu)"/>
+<rect x="1868" y="198" width="224" height="16" fill="#b9784a" fill-opacity=".55" clip-path="url(#cJu)"/>
+<rect x="1868" y="238" width="224" height="22" fill="#d9a77a" fill-opacity=".55" clip-path="url(#cJu)"/>
+<rect x="1868" y="278" width="224" height="14" fill="#b9784a" fill-opacity=".55" clip-path="url(#cJu)"/>
+<rect x="1868" y="308" width="224" height="12" fill="#c98d5e" fill-opacity=".55" clip-path="url(#cJu)"/>
+<ellipse cx="2018" cy="266" rx="20" ry="10" fill="#b0473a" fill-opacity=".7"/>
+<circle cx="1980" cy="228" r="112" fill="url(#gSh)" clip-path="none"/>
+<text x="1980" y="386" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">JUPITER</text>
+<ellipse cx="2560" cy="228" rx="164" ry="30" fill="none" stroke="#e8d3a8" stroke-width="11" stroke-opacity=".8"/>
+<circle cx="2560" cy="228" r="84" fill="url(#gSa)"/>
+<ellipse cx="2560" cy="228" rx="164" ry="30" fill="none" stroke="#e8d3a8" stroke-width="11" stroke-opacity=".9" clip-path="url(#cSaF)"/>
+<circle cx="2560" cy="228" r="84" fill="url(#gSh)" clip-path="none"/>
+<text x="2560" y="358" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">SATURN</text>
+<circle cx="3000" cy="228" r="32" fill="url(#gUr)"/>
+<circle cx="3000" cy="228" r="32" fill="url(#gSh)" clip-path="none"/>
+<text x="3000" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">URANUS</text>
+<circle cx="3250" cy="228" r="30" fill="url(#gNe)"/>
+<circle cx="3250" cy="228" r="30" fill="url(#gSh)" clip-path="none"/>
+<text x="3250" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">NEPTUNE</text>
+<circle cx="3455" cy="228" r="7" fill="url(#gPl)"/>
+<circle cx="3455" cy="228" r="7" fill="url(#gSh)" clip-path="none"/>
+<text x="3455" y="314" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="3" font-family="IBM Plex Mono, monospace">PLUTO</text>
+<circle cx="1045" cy="150" r="9" fill="url(#gMo)"/><text x="1079" y="156" font-size="16" fill="#b8ab8e" letter-spacing="2" font-family="IBM Plex Mono, monospace">MOON</text>
+<circle cx="-560" cy="228" r="1095" fill="none" stroke="#f0b860" stroke-width="2.4" stroke-dasharray="10 8" stroke-opacity=".85"/>
+<ellipse cx="529.3" cy="340.0" rx="11" ry="4.6" transform="rotate(-30 529.3 340.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<text x="545" y="346" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="600" fill="#f0b860" letter-spacing="2" stroke="#0a0b10" stroke-width="5" paint-order="stroke">RAVI I</text>
+<circle cx="-560" cy="228" r="1360" fill="none" stroke="#f0b860" stroke-width="2.4" stroke-dasharray="10 8" stroke-opacity=".85"/>
+<ellipse cx="795.4" cy="340.0" rx="11" ry="4.6" transform="rotate(-30 795.4 340.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<text x="811" y="346" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="600" fill="#f0b860" letter-spacing="2" stroke="#0a0b10" stroke-width="5" paint-order="stroke">RAVI II</text>
+<circle cx="-560" cy="228" r="1685" fill="none" stroke="#f0b860" stroke-width="2.4" stroke-dasharray="10 8" stroke-opacity=".85"/>
+<ellipse cx="1121.3" cy="340.0" rx="11" ry="4.6" transform="rotate(-30 1121.3 340.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<text x="1137" y="346" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="600" fill="#f0b860" letter-spacing="2" stroke="#0a0b10" stroke-width="5" paint-order="stroke">RAVI III</text>
+<circle cx="-560" cy="228" r="2010" fill="none" stroke="#f0b860" stroke-width="2.4" stroke-dasharray="10 8" stroke-opacity=".85"/>
+<ellipse cx="1446.9" cy="340.0" rx="11" ry="4.6" transform="rotate(-30 1446.9 340.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<text x="1463" y="346" font-family="IBM Plex Mono, monospace" font-size="16" font-weight="600" fill="#f0b860" letter-spacing="2" stroke="#0a0b10" stroke-width="5" paint-order="stroke">RAVI IV</text>
+<text x="520" y="398" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">RAVI I–IV · Helios rings orbiting the Sun, one in each gap out to the asteroid belt · Sunday</text>
+<circle cx="420" cy="228" r="30" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="405.0" cy="202.0" rx="11" ry="4.6" transform="rotate(-30 405.0 202.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="650" cy="228" r="44" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="631.4" cy="188.1" rx="11" ry="4.6" transform="rotate(-30 631.4 188.1)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="1045" cy="150" r="26" fill="none" stroke="#f0b860" stroke-width="4" stroke-opacity="1"/>
+<ellipse cx="1025.1" cy="133.3" rx="15.399999999999999" ry="6.4399999999999995" transform="rotate(-30 1025.1 133.3)" fill="#0a0b10" stroke="#f0b860" stroke-width="4.199999999999999"/>
+<circle cx="1300" cy="228" r="38" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="1281.0" cy="195.1" rx="11" ry="4.6" transform="rotate(-30 1281.0 195.1)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="1980" cy="228" r="150" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="1894.0" cy="105.1" rx="11" ry="4.6" transform="rotate(-30 1894.0 105.1)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="2560" cy="228" r="182" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="2463.6" cy="73.7" rx="11" ry="4.6" transform="rotate(-30 2463.6 73.7)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="3000" cy="228" r="52" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="2974.0" cy="183.0" rx="11" ry="4.6" transform="rotate(-30 2974.0 183.0)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="3250" cy="228" r="50" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="3225.0" cy="184.7" rx="11" ry="4.6" transform="rotate(-30 3225.0 184.7)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<circle cx="3455" cy="228" r="22" fill="none" stroke="#f0b860" stroke-width="2.6" stroke-opacity="0.85"/>
+<ellipse cx="3444.0" cy="208.9" rx="11" ry="4.6" transform="rotate(-30 3444.0 208.9)" fill="#0a0b10" stroke="#f0b860" stroke-width="3"/>
+<line x1="405" y1="202" x2="338" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="330" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">BUDHA</text>
+<text x="330" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Mercury</text>
+<text x="330" y="100" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Wednesday</text>
+<line x1="631" y1="188" x2="628" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="620" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">SHUKRA</text>
+<text x="620" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Venus</text>
+<text x="620" y="100" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Friday</text>
+<line x1="1025" y1="133" x2="938" y2="76" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="930" y="40" font-family="IBM Plex Mono, monospace" font-size="27" font-weight="600" fill="#ffd27a" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">SOMA</text>
+<text x="930" y="66" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits the Moon</text>
+<text x="930" y="88" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Monday</text>
+<line x1="1281" y1="195" x2="1258" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="1250" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">MANGALA</text>
+<text x="1250" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Mars</text>
+<text x="1250" y="100" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Tuesday</text>
+<line x1="1894" y1="105" x2="1668" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="1660" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">GURU</text>
+<text x="1660" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Jupiter</text>
+<text x="1660" y="100" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Thursday</text>
+<line x1="2464" y1="74" x2="2188" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="2180" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">SHANI</text>
+<text x="2180" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Saturn</text>
+<text x="2180" y="100" font-family="IBM Plex Mono, monospace" font-size="17" fill="#b8ab8e" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">Saturday</text>
+<line x1="2974" y1="183" x2="2858" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="2850" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">VARUNA</text>
+<text x="2850" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Uranus</text>
+<line x1="3225" y1="185" x2="3118" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="3110" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">ARUNA</text>
+<text x="3110" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Neptune</text>
+<line x1="3444" y1="209" x2="3358" y2="88" stroke="#f0b860" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="3350" y="52" font-family="IBM Plex Mono, monospace" font-size="21" font-weight="600" fill="#f0b860" letter-spacing="3" stroke="#0a0b10" stroke-width="6" paint-order="stroke">YAMA</text>
+<text x="3350" y="78" font-family="IBM Plex Mono, monospace" font-size="17" fill="#ece6d8" letter-spacing="1" stroke="#0a0b10" stroke-width="5" paint-order="stroke">orbits Pluto</text>
+</svg>
+  <div style="position:absolute;left:0;bottom:0;display:flex;align-items:center;gap:14px;background:rgba(10,11,16,.85);padding:10px 18px;border-top:1.5px solid #4a4232;border-right:1.5px solid #4a4232">
+    <span class="tagl">A</span><h2 style="margin:0;font-size:20px;font-weight:600;letter-spacing:.16em;color:#f0b860">SETTLEMENTS NAMED FOR THE BODIES THEY ORBIT · RAVI TO YAMA</h2>
+  </div>
+</div>
+
+<!-- B · the orbit view -->
+<section class="panel" style="left:40px;top:550px;width:1500px;height:552px">
+  <div class="ph"><span class="tagl">B</span><h2>Soma, finished: six rings on one spine, looping the Moon</h2></div>
+  <div class="pb" style="padding:0"><img src="img/orbitview.png" alt="Top-down view: Earth fixed, the Moon on its orbit, Soma's loop around the Moon and a close-up of the six-ring stack" style="height:500px;object-fit:cover"></div>
+</section>
+
+<!-- B2 · lunar industry -->
+<section class="panel cy" style="left:40px;top:1116px;width:1500px;height:378px">
+  <div class="ph"><span class="tagl">C</span><h2>On the Moon: regolith to basalt fibre to the mass driver</h2></div>
+  <div class="pb" style="padding:0"><img src="img/lunarind.png" alt="Lunar surface industry: collector robots, a sorting plant, a furnace and fibre-drawing tower, a packing shed and a mass driver throwing packets toward Soma" style="height:324px;object-fit:cover;object-position:center"></div>
+</section>
+
+<!-- C · one ring, and how it's made -->
+<section class="panel" style="left:1580px;top:550px;width:960px;height:920px">
+  <div class="ph"><span class="tagl">D</span><h2>One ring, and how it's made</h2></div>
+  <div class="pb" style="padding:0"><img src="img/onering.png" alt="One ring in perspective with its spokes, solar wings, middle ring, centre pod and radiator fins, and its tube cut open: shield, hoop bands, hull, soil and interiors, with masses and sources" style="height:866px;object-fit:cover;object-position:top"></div>
+</section>
+
+<!-- E · cells -->
+<section class="panel" style="left:2580px;top:550px;width:980px;height:540px">
+  <div class="ph"><span class="tagl">E</span><h2>Inside: 45 levels, 11 kinds of cell</h2></div>
+  <div class="pb" style="gap:10px"><div class="cells" style="position:relative"><div class="cell"><img src="img/cell-res.svg" alt=""><b style="color:#e6b85c">HOME</b><span>terraced homes</span></div><div class="cell"><img src="img/cell-lab.svg" alt=""><b style="color:#9fb7e8">LAB</b><span>labs round a light well</span></div><div class="cell"><img src="img/cell-farm.svg" alt=""><b style="color:#7fbf5a">FARM</b><span>9 growing tiers</span></div><div class="cell"><img src="img/cell-out.svg" alt=""><b style="color:#6fae4f">WILD</b><span>forest hills, river</span></div><div class="cell"><img src="img/cell-wat.svg" alt=""><b style="color:#66c2d4">WATER</b><span>lake and beaches</span></div><div class="cell"><img src="img/cell-food.svg" alt=""><b style="color:#e07a5f">FOOD</b><span>food halls, night</span></div><div class="cell"><img src="img/cell-park.svg" alt=""><b style="color:#c98a3a">PLAY</b><span>fields, stands, wall</span></div><div class="cell"><img src="img/cell-civ.svg" alt=""><b style="color:#d8a0b8">CIVIC</b><span>schools, hospital</span></div><div class="cell"><img src="img/cell-hw.svg" alt=""><b style="color:#b8ad98">PLANT</b><span>air, water, power</span></div><div class="cell"><img src="img/cell-ind.svg" alt=""><b style="color:#e0a050">MAKE</b><span>fab and repair</span></div><div class="cell"><img src="img/cell-hub.svg" alt=""><b style="color:#66c2d4">HUB</b><span>spoke elevators</span></div><div class="cell key"><b>45 LEVELS</b><span>step terraces wherever people live</span></div><img class="fx" src="img/cellfx.png" alt="" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none"></div>
+    <p class="note">606 cells of 180 m in 30 districts; ~550,000 people per ring, 30% kept for parks, water and wild land.</p></div>
+</section>
+
+<!-- F · land water power -->
+<section class="panel cy" style="left:2580px;top:1114px;width:980px;height:356px">
+  <div class="ph"><span class="tagl">F</span><h2>Land, water and transit</h2></div>
+  <div class="pb" style="flex-direction:row;gap:22px;align-items:flex-start">
+    <figure class="fig" style="width:250px"><img src="img/mountain-notext.svg" alt="Hollow mountain that filters the water"><figcaption>Hollow mountains filter the water down to a clean tank.</figcaption></figure>
+    <figure class="fig" style="flex:1"><img src="img/f_train.png" alt="The ring unrolled: cells of three districts with trains in the hardware base"><figcaption>District trains run in the hardware base and link all 30 districts. They stay slow (~70 km/h): riding with the spin makes you heavier.</figcaption></figure>
+  </div>
+</section>
+
+<!-- G · build strip -->
+<section class="panel cy" style="left:40px;top:1510px;width:2880px;height:446px">
+  <div class="ph"><span class="tagl">G</span><h2>Torus build</h2></div>
+  <div class="pb strip" style="grid-template-columns:repeat(9,minmax(0,1fr))">
+    <div class="step"><img src="img/f1_spine.png" alt=""><h3><b>1</b>The spine</h3><p>280 Starships dock nose to tail; the end ships steer.</p></div>
+    <div class="step"><img src="img/drums.png" alt=""><h3><b>2</b>Thicken</h3><p>Drums over the Starship core carry the load once rings spin.</p></div>
+    <div class="step"><img src="img/f_pods.png" alt=""><h3><b>3</b>Centre pods</h3><p>Six pods, one per ring, turn freely on magnetic bearings over the fixed spine until their ring is attached.</p></div>
+    <div class="step"><img src="img/f2_setup.png" alt=""><h3><b>4</b>Factory setup</h3><p>Two rail rings, six beams, grippers and weld crawlers: 7 flights.</p></div>
+    <div class="step"><img src="img/f_panels.png" alt=""><h3><b>5</b>Hanging the panels</h3><p>A loading arm unloads panels from the Starship; carts run them around the factory jig to hang.</p></div>
+    <div class="step"><img src="img/f3_build.png" alt=""><h3><b>6</b>Building the tube</h3><p>The factory grips, welds a bay, then inchworms 18 m forward.</p></div>
+    <div class="step"><img src="img/f_spokes.png" alt=""><h3><b>7</b>Spokes</h3><p>Basalt-fibre origami links unfold from the spine pod and the tube&#8217;s connector cell, and lock mid-span.</p></div>
+    <div class="step"><img src="img/f5_solar.png" alt=""><h3><b>8</b>Wings and fins</h3><p>17 km² of solar wings; one radiator fin per cell.</p></div>
+    <div class="step"><img src="img/f_halftorus.png" alt=""><h3><b>9</b>Half-built torus</h3><p>Factories at the six spokes lay tube both ways until the 12 fronts meet.</p></div>
+  </div>
+</section>
+
+<!-- H · cost -->
+<section class="panel" style="left:2960px;top:1510px;width:600px;height:446px">
+  <div class="ph"><span class="tagl">H</span><h2>Cost per resident</h2></div>
+  <div class="pb" style="padding:10px 18px"><svg viewBox="0 0 564 290" width="564" height="290" font-family="IBM Plex Mono, monospace" role="img" aria-label="Build cost per resident for each new ring, optimistic and conservative"><line x1="66" x2="556" y1="238.0" y2="238.0" stroke="#2c2a24"/><text x="56" y="244.0" text-anchor="end" font-size="16" fill="#b8ab8e">$0k</text><line x1="66" x2="556" y1="190.0" y2="190.0" stroke="#2c2a24"/><text x="56" y="196.0" text-anchor="end" font-size="16" fill="#b8ab8e">$200k</text><line x1="66" x2="556" y1="142.0" y2="142.0" stroke="#2c2a24"/><text x="56" y="148.0" text-anchor="end" font-size="16" fill="#b8ab8e">$400k</text><line x1="66" x2="556" y1="94.0" y2="94.0" stroke="#2c2a24"/><text x="56" y="100.0" text-anchor="end" font-size="16" fill="#b8ab8e">$600k</text><rect x="77.0" y="79.4" width="39.2" height="158.6" fill="#3a5f80"/><rect x="77.0" y="197.6" width="39.2" height="40.4" fill="#f0b860"/><text x="96.6" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">1</text><rect x="138.3" y="101.1" width="39.2" height="136.9" fill="#3a5f80"/><rect x="138.3" y="208.2" width="39.2" height="29.8" fill="#f0b860"/><text x="157.9" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">2</text><rect x="199.5" y="103.3" width="39.2" height="134.7" fill="#3a5f80"/><rect x="199.5" y="209.7" width="39.2" height="28.3" fill="#f0b860"/><text x="219.1" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">3</text><rect x="260.8" y="105.9" width="39.2" height="132.1" fill="#3a5f80"/><rect x="260.8" y="211.4" width="39.2" height="26.6" fill="#f0b860"/><text x="280.4" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">5</text><rect x="322.0" y="109.0" width="39.2" height="129.0" fill="#3a5f80"/><rect x="322.0" y="213.3" width="39.2" height="24.7" fill="#f0b860"/><text x="341.6" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">10</text><rect x="383.3" y="106.2" width="39.2" height="131.8" fill="#3a5f80"/><rect x="383.3" y="212.6" width="39.2" height="25.4" fill="#f0b860"/><text x="402.9" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">25</text><rect x="444.5" y="115.2" width="39.2" height="122.8" fill="#3a5f80"/><rect x="444.5" y="216.3" width="39.2" height="21.7" fill="#f0b860"/><text x="464.1" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">50</text><rect x="505.8" y="117.5" width="39.2" height="120.5" fill="#3a5f80"/><rect x="505.8" y="217.2" width="39.2" height="20.8" fill="#f0b860"/><text x="525.4" y="262" text-anchor="middle" font-size="16" fill="#ece6d8">100</text><text x="311.0" y="286" text-anchor="middle" font-size="16" fill="#b8ab8e" letter-spacing="2">RING NUMBER</text><rect x="66" y="8" width="16" height="16" fill="#f0b860"/><text x="90" y="22" font-size="17" fill="#ece6d8">optimistic: $168k → $87k</text><rect x="66" y="36" width="16" height="16" fill="#3a5f80"/><text x="90" y="50" font-size="17" fill="#ece6d8">conservative: $661k → $502k</text></svg>
+  <p class="note" style="font-size:15px">Cost per person falls as factories are reused and Earth parts get cheaper.</p></div>
+</section>
+
+<!-- title bar -->
+<div style="position:absolute;left:40px;top:1990px;width:3520px;height:124px;display:flex;gap:28px">
+  <div style="flex:1 1 auto;border:2px solid #e8e2d4;display:flex;align-items:center;gap:30px;padding:0 36px">
+    <img src="img/mark.png" alt="" style="width:110px;height:110px">
+    <div>
+      <div style="font-family:Inter,sans-serif;font-size:74px;font-weight:400;letter-spacing:.42em;color:#f3eee2;line-height:1">SOMA</div>
+      <div style="font-size:17px;letter-spacing:.3em;color:#b8ab8e;margin-top:8px">A CISLUNAR RING SETTLEMENT</div>
+    </div>
+    <div class="chips" style="margin-left:auto">
+      <div class="chip"><div class="v">550,000</div><div class="k">people per ring</div></div>
+      <div class="chip"><div class="v">3.3 M</div><div class="k">per six-ring stack</div></div>
+      <div class="chip"><div class="v">1 g</div><div class="k">at 0.23 rpm</div></div>
+      <div class="chip"><div class="v">30,000 km</div><div class="k">loop around the Moon</div></div>
+      <div class="chip"><div class="v">$87–661k</div><div class="k">build cost per resident</div></div>
+    </div>
+  </div>
+  <div style="flex:0 0 420px;border:1.5px solid #4a4232;padding:14px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+    <p style="margin:0;font-size:16px;letter-spacing:.12em;color:#b8ab8e">ORDER-OF-MAGNITUDE ESTIMATES</p>
+    <p style="margin:0;font-size:16px;letter-spacing:.12em;color:#b8ab8e">SPECULATIVE DESIGN STUDY · 2026</p>
+    <p style="margin:0;font-size:16px;letter-spacing:.12em;color:#b8ab8e">ILLUSTRATIONS NOT TO SCALE</p>
+  </div>
+</div>
+
+<div class="watermark"></div>
+</div>
+</body>
+</html>

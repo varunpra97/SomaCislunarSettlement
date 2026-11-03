@@ -7,9 +7,9 @@
 
 # Soma: Cislunar Ring Settlement
 
-https://github.com/user-attachments/assets/a68c558e-4816-4515-9c97-f966b7a21b6e
+<p align="center"><img src="poster/soma-poster-animated.gif" alt="Animated Soma poster: every tile plays its build step"></p>
 
-<p align="center"><b>How Soma is built</b> (5 min 57 s) · <a href="videos/soma-construction-film.mp4">download the MP4</a></p>
+<p align="center"><b><a href="https://varunpra97.github.io/SomaCislunarSettlement/">Project page</a></b> · <a href="videos/soma-construction-film.mp4">Construction film (5 min 57 s)</a> · <a href="paper/soma-cislunar-rings.pdf">Paper (PDF)</a> · <a href="poster/soma-poster-60x36in.pdf">Poster (60 × 36 in PDF)</a></p>
 
 A speculative design study for space settlements: a cislunar ring for about 550,000 people, six of them stacked on one shared spine, built from Starship-sized hull units, lunar material and self-assembling bay factories, and parked in a stable orbit around the Moon. The study also sketches two Sun-orbiting rings (between Earth and Mars, and in the asteroid belt).
 
@@ -19,7 +19,7 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> The film: how Soma is built
 
-Every construction animation in build order, from the spine to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 57 s). It plays at the top of this page; click the preview below to open the MP4 file.
+Every construction animation in build order, from the spine to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 57 s). Click the preview below to open the MP4 file.
 
 [![How Soma is built](docs/soma-construction-film.gif)](videos/soma-construction-film.mp4)
 
@@ -69,6 +69,17 @@ Dawn over a valley of terrace homes, a Roadster driving up a block's climb lane 
 
 [![A day on the ring](docs/day-on-the-ring.gif)](videos/day-on-the-ring.mp4)
 
+## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Poster
+
+A 60 × 36 in poster of the whole project: the settlements named for the bodies they orbit, the finished stack on its loop around the Moon, lunar industry, one ring and how it is made, the 11 cell types (step terraces wherever people live), land, water and transit, the nine-step build, and the cost per resident.
+
+- [Print PDF, 60 × 36 in](poster/soma-poster-60x36in.pdf) · [still image, 4096 px](poster/soma-poster-x.jpg)
+- Animated GIF, 8-second loop: [1920 px](poster/soma-poster-animated.gif) · [3840 px](poster/soma-poster-animated-3840.gif)
+
+## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Paper
+
+[**Soma: CisLunar Rings**](paper/soma-cislunar-rings.pdf) (6 pages): a short brief of the design, build sequence, orbit and cost. The LaTeX source is in [`paper/`](paper) and opens in Overleaf (New Project → Upload Project, with `main.tex` and `figures/` zipped).
+
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Report
 
 [**Soma: Cost, Deployment and Operations**](docs/soma-report.pdf) (PDF, 36 pages): proof-of-concept milestones, cost, deployment, building the spokes, wings and radiators, ring stacks and the price per resident for each new ring, the orbit, bootstrapping, power, heat, air, water, food and waste, and how the systems work together.
@@ -112,6 +123,9 @@ The logo files are in [`assets/logo`](assets/logo): full logo and mark alone, da
 
 ```
 assets/logo/       Soma logo and mark (PNG + SVG, dark and light)
+poster/            60 × 36 in poster (PDF, JPG) and the animated GIF
+paper/             LaTeX brief (main.tex, figures) and its PDF
+index.html         the project page served by GitHub Pages
 videos/            MP4 videos, including the full construction film
 docs/              GIF previews used in this README, and the report PDF
 designs/png/       board exports (2400 × 1600)
@@ -120,6 +134,7 @@ animation/         interactive ring-assembly animation (HTML)
 scripts/           Python (pycairo) scripts that render the videos, drawings and logo
 scripts/stack/     spokes, solar/radiators, centre pod/spine, stack and orbit videos; cost and orbit models
 scripts/film/      logo, title cards and the zoom-out finale
+scripts/poster/    poster layout, drawn panels, animated tiles and GIF build
 ```
 
 To re-render: `pip install pycairo numpy scipy`, have `ffmpeg` on the path, then run e.g. `python scripts/stack/stackvid.py all` or `python scripts/film/finale.py`. Each script writes one MP4 per scene and joins them with ffmpeg's concat demuxer.
