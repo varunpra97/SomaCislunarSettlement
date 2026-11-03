@@ -103,6 +103,53 @@ def a4(ctx,t,dur):
     caption(ctx,'4 · THE MIDDLE RING, HALFWAY OUT','Twelve small bay factories start at the spokes and build 40 m tube both ways until the arcs meet. At 0.5 g it holds industry, labs and the elevator transfer stop, and ties the spokes together.')
     fade(ctx,t,dur)
 
+def a4b(ctx,t,dur):
+    """Main ring closes: each factory's first stretch of tube locks onto its spoke, then grows both ways."""
+    background(ctx); head(ctx); hub(ctx)
+    T_LOCK=(2.6,3.6); T_GROW=(4.2,10.0); T_SPIN=(11.0,13.6)
+    spin=ease(seg(t,*T_SPIN))*.35   # radians of visible turn during spin-up
+    ctx.save(); ctx.translate(CXc,CYc); ctx.rotate(spin); ctx.translate(-CXc,-CYc)
+    planned(ctx,.3*(1-seg(t,*T_GROW)))
+    # middle ring: already closed in the scene before
+    ctx.new_path(); ctx.arc(CXc,CYc,RP/2,0,2*math.pi); col(ctx,GOLD,.9); ctx.set_line_width(4); ctx.stroke()
+    lock=seg(t,*T_LOCK)
+    for d in ANG:
+        # spokes stop just short of the tube until it locks on
+        q=P(RP-16+16*ease(lock),d); col(ctx,CYD); ctx.set_line_width(3); ctx.move_to(*P(12,d)); ctx.line_to(*q); ctx.stroke()
+    seed=ease(seg(t,.6,2.6))*6        # first stretch of tube at each spoke: up to ±6°
+    grow=ease(seg(t,*T_GROW))*24      # then out to ±30° where neighbours meet
+    half=seed+grow
+    for d in ANG:
+        if half<=0: continue
+        ctx.new_path(); ctx.arc(CXc,CYc,RP,math.radians(d-half),math.radians(d+half))
+        col(ctx,GOLD); ctx.set_line_width(11); ctx.stroke()
+        if half<30:   # a bay factory at each of the two growing fronts
+            for sg in (-1,1):
+                q=P(RP,d+sg*half); ctx.rectangle(q[0]-7,q[1]-7,14,14); col(ctx,CY); ctx.fill()
+        if 0<lock<1 or (lock>=1 and t<T_LOCK[1]+.5):   # flash where tube meets spoke
+            q=P(RP,d); r=6+14*seg(t,T_LOCK[0],T_LOCK[1]+.5)
+            ctx.new_path(); ctx.arc(q[0],q[1],r,0,2*math.pi); col(ctx,SPARK,.9*(1-seg(t,T_LOCK[1],T_LOCK[1]+.5))); ctx.set_line_width(2); ctx.stroke()
+    if half>=30 and t<T_GROW[1]+1.2:   # the six joins
+        for d in ANG:
+            q=P(RP,d+30); r=6+16*seg(t,T_GROW[1],T_GROW[1]+1.2)
+            ctx.new_path(); ctx.arc(q[0],q[1],r,0,2*math.pi); col(ctx,SPARK,1-seg(t,T_GROW[1],T_GROW[1]+1.2)); ctx.set_line_width(2); ctx.stroke()
+    ctx.restore()
+    if t>T_SPIN[0]-.4:   # spin arrow
+        a=seg(t,T_SPIN[0]-.4,T_SPIN[0]+.4)
+        ctx.new_path(); ctx.arc(CXc,CYc,RP+34,math.radians(-60),math.radians(-20)); col(ctx,GOLD,a); ctx.set_line_width(2); ctx.stroke()
+        q=P(RP+34,-20); ctx.move_to(q[0]+2,q[1]-8); ctx.line_to(q[0]-4,q[1]+6); ctx.line_to(q[0]+9,q[1]+3); ctx.close_path(); col(ctx,GOLD,a); ctx.fill()
+    pct=100*min(1,half/30)
+    readout(ctx,'MAIN RING CLOSED',f'{pct:3.0f} %',990,150)
+    readout(ctx,'BUILD FRONTS','12' if t>T_GROW[0] else '6 seeds',990,215,CY,a=seg(t,.8,1.5))
+    rpm=0.23*ease(seg(t,*T_SPIN))
+    readout(ctx,'SPIN',f'{rpm:4.2f} rpm',990,280,GREEN if rpm>=.229 else GOLD,a=seg(t,T_SPIN[0]-.6,T_SPIN[0]))
+    text(ctx,'RING CLOSED',CXc,CYc-RP-34,16,GOLD,anchor='c',bold=True,a=seg(t,T_GROW[1]+.3,T_GROW[1]+.9))
+    label(ctx,'first stretch of tube locks onto its spoke',120,150,P(RP,-30)[0]-6,P(RP,-30)[1]-6,SPARK,a=seg(t,2.4,3.0)*(1-seg(t,6.0,6.6)))
+    label(ctx,'then each factory pair builds both ways',120,520,P(RP,150+12)[0],P(RP,150+12)[1],CY,a=seg(t,4.6,5.2)*(1-seg(t,9.6,10.2)))
+    label(ctx,'MIDDLE RING · already closed',780,560,P(RP/2,40)[0],P(RP/2,40)[1],GOLD,a=seg(t,.6,1.3)*(1-seg(t,4.4,5.0)))
+    caption(ctx,'5 · THE MAIN RING CLOSES','Each bay factory\'s first stretch of tube locks onto its spoke; then all six build both ways until the 12 fronts meet. With the middle ring tying the spokes together, the ring closes and spins up to 0.23 rpm.')
+    fade(ctx,t,dur)
+
 def a5(ctx,t,dur):
     card(ctx,'SPOKES AND MIDDLE RING',[
         ('Spokes','6 × 17.35 km basalt-fibre truss with an elevator shaft, ~35 kt each'),
@@ -113,5 +160,5 @@ def a5(ctx,t,dur):
         ('Order','Hub → spokes → junction nodes → main ring and middle ring in parallel'),
     ],t,dur,'order-of-magnitude design study')
 
-SCENES=[('sa1',a1,8),('sa2',a2,12),('sa3',a3,10),('sa4',a4,11),('sa5',a5,7)]
+SCENES=[('sa1',a1,8),('sa2',a2,12),('sa3',a3,10),('sa4',a4,11),('sa4b',a4b,14),('sa5',a5,7)]
 if __name__=='__main__': main(SCENES,'spokes-and-middle-ring')
