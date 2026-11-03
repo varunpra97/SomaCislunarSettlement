@@ -7,6 +7,12 @@
 
 # Soma: Cislunar Ring Settlement
 
+<p align="center">
+  <a href="videos/soma-construction-film.mp4"><img src="docs/soma-film-highlights.gif" alt="Highlights from How Soma is built: the bay factory, spine, spokes, tube, solar wings, ring stack and the orbit around the Moon" width="100%"></a>
+  <br>
+  <a href="videos/soma-construction-film.mp4"><b>▶ Watch the full film: How Soma is built (5 min 44 s)</b></a>
+</p>
+
 A speculative design study for space settlements: a cislunar ring for about 550,000 people, six of them stacked on one shared spine, built from Starship-sized hull units, lunar material and self-assembling bay factories, and parked in a stable orbit around the Moon. The study also sketches two Sun-orbiting rings (between Earth and Mars, and in the asteroid belt).
 
 The logo is the orbit itself: the ring loops the Moon backwards every 4.7 days while the Moon carries it around Earth.
@@ -15,7 +21,7 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> The film: how Soma is built
 
-Every construction animation in build order, from the bay factory to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). Click the preview to open the MP4.
+Every construction animation in build order, from the bay factory to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). The highlights at the top of this page come from it; click either preview to open the MP4.
 
 [![How Soma is built](docs/soma-construction-film.gif)](videos/soma-construction-film.mp4)
 
