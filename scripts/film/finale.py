@@ -83,7 +83,7 @@ def titlecard(ctx,t,dur):
     fade(ctx,t,dur,fi=.4,fo=.6)
 CH=[('1','THE SPINE AND CENTRE PODS','280 Starships docked nose to tail, then wrapped in drums'),
     ('2','THE BAY FACTORY','the machine that builds the tube, 18 m at a time'),
-    ('3','BUILDING THE TUBE','panels from Starships, welded and sealed bay by bay'),
+    ('3','BUILDING THE TUBE','panels from Starships, sealed bay by bay, then shielded with lunar regolith'),
     ('4','SPOKES AND THE MIDDLE RING','six spokes in balanced pairs, then a 0.5 g ring halfway out'),
     ('5','SOLAR WINGS AND RADIATORS','6 GW of wings on the spokes, 650 fins on the tube'),
     ('6','THE RING STACK','twin rings, spin-up, Sun-pointing and the cost of each new ring')]
