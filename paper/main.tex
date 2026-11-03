@@ -11,6 +11,7 @@
 \sisetup{group-separator={,},group-minimum-digits=4}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{enumitem}
 \usepackage{caption}
@@ -158,6 +159,8 @@ mass driver throws packets at \SI{2.4}{km/s} to a catcher near Soma
   \caption{On the Moon: regolith to basalt fibre to the mass driver.}
 \end{figure}
 
+\input{ops_sections.tex}
+
 \section{Orbit}
 Soma sits in a lunar distant retrograde orbit about \SI{30000}{km} from the Moon,
 looping it backwards every 4.7 days while the Moon carries it around Earth. In a
@@ -201,6 +204,8 @@ one (90\%). A standalone ring costs about \$89--356B; 100 rings total about \$5.
 \end{table}
 
 \section{Deliverables}
+\noindent Project page: \href{https://varunpra97.github.io/SomaCislunarSettlement/}{varunpra97.github.io/SomaCislunarSettlement}
+
 \begin{itemize}[leftmargin=1.2em,itemsep=0.3em]
   \item \textbf{Repository:} \repo, with the README, videos, design boards, logo and
   render scripts.
@@ -224,6 +229,8 @@ the numbers hold.
   \item Mass-driver catch accuracy and throughput at $\sim$\SI{30}{Mt} a year
   \item Cost model assumptions: learning rates, Starship launch prices and lunar
   industry ramp
+  \item Mass-driver catcher design and how packets are unpacked and placed at Soma
+  \item Per-cell split of the Earth kit (estimated by function, not itemised)
 \end{itemize}
 
 \end{document}

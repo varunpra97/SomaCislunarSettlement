@@ -78,7 +78,7 @@ A 60 × 36 in poster of the whole project: the settlements named for the bodies 
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Paper
 
-[**Soma: CisLunar Rings**](paper/soma-cislunar-rings.pdf) (6 pages): a short brief of the design, build sequence, orbit and cost. The LaTeX source is in [`paper/`](paper) and opens in Overleaf (New Project → Upload Project, with `main.tex` and `figures/` zipped).
+[**Soma: CisLunar Rings**](paper/soma-cislunar-rings.pdf) (15 pages): the design, build sequence, materials and cost for each of the 11 cell types, the lunar base and its specs, Starship launch counts, orbit and cost. The numbers come from [`paper/model/opsmodel.py`](paper/model/opsmodel.py). The LaTeX source is in [`paper/`](paper) and opens in Overleaf (New Project → Upload Project, with `main.tex` and `figures/` zipped).
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Report
 
