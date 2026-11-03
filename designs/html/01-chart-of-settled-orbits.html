@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Chart of Settled Orbits</title>
+
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>body{width:2400px;height:1600px;overflow:hidden} h1{font-size:44px !important;letter-spacing:0.24em !important}
+body{margin:0}
+a{color:#d9b36a}a:hover{color:#f0d29a}
+.stars{background-image:radial-gradient(1px 1px at 12% 18%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 83% 61%,#fff3d6 50%,transparent 51%),radial-gradient(1px 1px at 52% 91%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 5% 55%,#cfd8ff 50%,transparent 51%);background-size:310px 230px,410px 290px,520px 370px,270px 330px,460px 250px,380px 410px}
+.lbl{position:absolute;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;margin:0}
+.spec{display:grid;grid-template-columns:150px minmax(0,1fr);gap:9px 16px;margin:0;font-size:13px}
+.spec dt{color:#b8ab8e;letter-spacing:0.12em;text-transform:uppercase;font-size:11px;padding-top:2px}
+.spec dd{margin:0;color:#ece6d8}
+</style>
+
+<div class="stars" style="position: relative; width: 2400px; height: 1600px; overflow: hidden; background-color: #0a0b10; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #e8e2d4">
+
+<svg width="2400" height="1000" viewBox="0 0 2400 1000" style="position: absolute; left: 0; top: 0" role="img" aria-label="Solar system diagram with two settlement rings around the Sun and six ring stations around Earth">
+<defs>
+<radialGradient id="gSun" cx="0.92" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffb35c"/><stop offset="0.85" stop-color="#e8762e"/><stop offset="1" stop-color="#c4561f"/></radialGradient>
+<radialGradient id="gMercury" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#e6c79a"/><stop offset="1" stop-color="#9a7a4e"/></radialGradient>
+<radialGradient id="gVenus" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#ffe29a"/><stop offset="1" stop-color="#d79a2e"/></radialGradient>
+<radialGradient id="gEarth" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#7cc4ef"/><stop offset="0.6" stop-color="#2f7fbf"/><stop offset="1" stop-color="#174a7a"/></radialGradient>
+<radialGradient id="gMoon" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#f2f0ea"/><stop offset="1" stop-color="#9c998f"/></radialGradient>
+<radialGradient id="gMars" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#f08a5a"/><stop offset="1" stop-color="#a8381c"/></radialGradient>
+<radialGradient id="gUranus" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#c9f0f2"/><stop offset="1" stop-color="#6fbfcb"/></radialGradient>
+<radialGradient id="gNeptune" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#7d9be8"/><stop offset="1" stop-color="#2d4aa3"/></radialGradient>
+<radialGradient id="gSaturn" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#fbe7cc"/><stop offset="1" stop-color="#d9b48a"/></radialGradient>
+<radialGradient id="gShade" cx="0.3" cy="0.3" r="0.9"><stop offset="0.55" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.45"/></radialGradient>
+<clipPath id="cJupiter"><circle cx="1650" cy="500" r="118"/></clipPath>
+<clipPath id="cSatFront"><rect x="1840" y="500" width="320" height="80"/></clipPath>
+<marker id="mGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d9b36a"/></marker>
+</defs>
+
+<circle cx="-1380" cy="500" r="1540" fill="#e8762e" opacity="0.08"/>
+<circle cx="-1380" cy="500" r="1500" fill="url(#gSun)"/>
+
+<g fill="none" stroke="#8a7a5c" stroke-width="1" opacity="0.45">
+<circle cx="-1380" cy="500" r="1585"/>
+<circle cx="-1380" cy="500" r="1670"/>
+<circle cx="-1380" cy="500" r="1940"/>
+<circle cx="-1380" cy="500" r="2380"/>
+<circle cx="-1380" cy="500" r="3030"/>
+<circle cx="-1380" cy="500" r="3380"/>
+<circle cx="-1380" cy="500" r="3575"/>
+<circle cx="-1380" cy="500" r="3695"/>
+</g>
+
+<g aria-hidden="true"><circle cx="1250" cy="161" r="2.0" fill="#b9ab90" opacity="0.39"/><circle cx="1303" cy="370" r="0.9" fill="#b9ab90" opacity="0.6"/><circle cx="1225" cy="436" r="0.9" fill="#b9ab90" opacity="0.4"/><circle cx="1269" cy="817" r="1.0" fill="#b9ab90" opacity="0.46"/><circle cx="1285" cy="934" r="1.8" fill="#b9ab90" opacity="0.55"/><circle cx="1341" cy="60" r="2.3" fill="#b9ab90" opacity="0.49"/><circle cx="1217" cy="129" r="1.4" fill="#b9ab90" opacity="0.76"/><circle cx="1248" cy="579" r="2.0" fill="#b9ab90" opacity="0.54"/><circle cx="1274" cy="76" r="0.9" fill="#b9ab90" opacity="0.45"/><circle cx="1328" cy="430" r="1.4" fill="#b9ab90" opacity="0.64"/><circle cx="1285" cy="306" r="2.2" fill="#b9ab90" opacity="0.7"/><circle cx="1258" cy="572" r="1.7" fill="#b9ab90" opacity="0.79"/><circle cx="1329" cy="294" r="2.6" fill="#b9ab90" opacity="0.41"/><circle cx="1275" cy="749" r="1.1" fill="#b9ab90" opacity="0.59"/><circle cx="1221" cy="663" r="2.2" fill="#b9ab90" opacity="0.64"/><circle cx="1354" cy="319" r="2.1" fill="#b9ab90" opacity="0.65"/><circle cx="1312" cy="458" r="2.3" fill="#b9ab90" opacity="0.82"/><circle cx="1291" cy="659" r="0.9" fill="#b9ab90" opacity="0.7"/><circle cx="1281" cy="978" r="2.3" fill="#b9ab90" opacity="0.49"/><circle cx="1277" cy="664" r="0.8" fill="#b9ab90" opacity="0.58"/><circle cx="1220" cy="129" r="0.9" fill="#b9ab90" opacity="0.73"/><circle cx="1229" cy="255" r="1.5" fill="#b9ab90" opacity="0.79"/><circle cx="1232" cy="451" r="1.8" fill="#b9ab90" opacity="0.79"/><circle cx="1328" cy="853" r="1.3" fill="#b9ab90" opacity="0.56"/><circle cx="1251" cy="873" r="2.5" fill="#b9ab90" opacity="0.43"/><circle cx="1235" cy="240" r="1.2" fill="#b9ab90" opacity="0.59"/><circle cx="1304" cy="270" r="0.8" fill="#b9ab90" opacity="0.56"/><circle cx="1278" cy="564" r="2.5" fill="#b9ab90" opacity="0.7"/><circle cx="1300" cy="614" r="2.0" fill="#b9ab90" opacity="0.38"/><circle cx="1350" cy="772" r="2.4" fill="#b9ab90" opacity="0.75"/><circle cx="1281" cy="402" r="1.0" fill="#b9ab90" opacity="0.67"/><circle cx="1196" cy="80" r="1.2" fill="#b9ab90" opacity="0.43"/><circle cx="1239" cy="66" r="0.8" fill="#b9ab90" opacity="0.43"/><circle cx="1233" cy="368" r="0.8" fill="#b9ab90" opacity="0.79"/><circle cx="1297" cy="159" r="1.3" fill="#b9ab90" opacity="0.52"/><circle cx="1253" cy="134" r="2.3" fill="#b9ab90" opacity="0.85"/><circle cx="1295" cy="484" r="1.0" fill="#b9ab90" opacity="0.4"/><circle cx="1265" cy="272" r="2.3" fill="#b9ab90" opacity="0.43"/><circle cx="1187" cy="937" r="1.8" fill="#b9ab90" opacity="0.42"/><circle cx="1267" cy="41" r="1.8" fill="#b9ab90" opacity="0.84"/><circle cx="1352" cy="690" r="1.3" fill="#b9ab90" opacity="0.53"/><circle cx="1233" cy="764" r="1.8" fill="#b9ab90" opacity="0.74"/><circle cx="1259" cy="231" r="2.3" fill="#b9ab90" opacity="0.84"/><circle cx="1340" cy="797" r="2.3" fill="#b9ab90" opacity="0.72"/><circle cx="1256" cy="517" r="1.4" fill="#b9ab90" opacity="0.36"/><circle cx="1216" cy="286" r="1.3" fill="#b9ab90" opacity="0.7"/><circle cx="1373" cy="449" r="2.5" fill="#b9ab90" opacity="0.84"/><circle cx="1370" cy="369" r="1.2" fill="#b9ab90" opacity="0.46"/><circle cx="1236" cy="213" r="1.9" fill="#b9ab90" opacity="0.8"/><circle cx="1354" cy="480" r="2.0" fill="#b9ab90" opacity="0.75"/><circle cx="1229" cy="656" r="2.4" fill="#b9ab90" opacity="0.74"/><circle cx="1340" cy="479" r="1.1" fill="#b9ab90" opacity="0.74"/><circle cx="1257" cy="792" r="2.5" fill="#b9ab90" opacity="0.55"/><circle cx="1249" cy="933" r="2.1" fill="#b9ab90" opacity="0.44"/><circle cx="1218" cy="162" r="2.4" fill="#b9ab90" opacity="0.75"/><circle cx="1224" cy="817" r="2.6" fill="#b9ab90" opacity="0.68"/><circle cx="1276" cy="547" r="1.0" fill="#b9ab90" opacity="0.36"/><circle cx="1372" cy="645" r="1.7" fill="#b9ab90" opacity="0.82"/><circle cx="1265" cy="861" r="2.3" fill="#b9ab90" opacity="0.46"/><circle cx="1253" cy="299" r="1.2" fill="#b9ab90" opacity="0.64"/><circle cx="1260" cy="421" r="1.0" fill="#b9ab90" opacity="0.81"/><circle cx="1276" cy="459" r="1.9" fill="#b9ab90" opacity="0.8"/><circle cx="1256" cy="905" r="1.7" fill="#b9ab90" opacity="0.62"/><circle cx="1263" cy="33" r="1.6" fill="#b9ab90" opacity="0.44"/><circle cx="1204" cy="790" r="1.1" fill="#b9ab90" opacity="0.59"/><circle cx="1335" cy="555" r="1.4" fill="#b9ab90" opacity="0.61"/><circle cx="1295" cy="776" r="1.0" fill="#b9ab90" opacity="0.63"/><circle cx="1251" cy="284" r="2.2" fill="#b9ab90" opacity="0.6"/><circle cx="1298" cy="752" r="2.4" fill="#b9ab90" opacity="0.57"/><circle cx="1318" cy="505" r="1.7" fill="#b9ab90" opacity="0.7"/><circle cx="1292" cy="532" r="1.7" fill="#b9ab90" opacity="0.82"/><circle cx="1307" cy="865" r="2.5" fill="#b9ab90" opacity="0.48"/><circle cx="1275" cy="930" r="2.3" fill="#b9ab90" opacity="0.42"/><circle cx="1239" cy="444" r="0.9" fill="#b9ab90" opacity="0.47"/><circle cx="1227" cy="664" r="2.2" fill="#b9ab90" opacity="0.8"/><circle cx="1236" cy="710" r="2.0" fill="#b9ab90" opacity="0.42"/><circle cx="1323" cy="954" r="1.2" fill="#b9ab90" opacity="0.83"/><circle cx="1284" cy="488" r="2.6" fill="#b9ab90" opacity="0.77"/><circle cx="1245" cy="434" r="1.7" fill="#b9ab90" opacity="0.52"/><circle cx="1245" cy="324" r="2.1" fill="#b9ab90" opacity="0.36"/><circle cx="1308" cy="442" r="0.8" fill="#b9ab90" opacity="0.52"/><circle cx="1320" cy="512" r="0.9" fill="#b9ab90" opacity="0.84"/><circle cx="1307" cy="958" r="1.0" fill="#b9ab90" opacity="0.48"/><circle cx="1212" cy="771" r="1.3" fill="#b9ab90" opacity="0.41"/><circle cx="1258" cy="899" r="2.3" fill="#b9ab90" opacity="0.48"/><circle cx="1212" cy="907" r="1.8" fill="#b9ab90" opacity="0.7"/><circle cx="1199" cy="71" r="2.0" fill="#b9ab90" opacity="0.56"/><circle cx="1197" cy="925" r="1.9" fill="#b9ab90" opacity="0.75"/><circle cx="1210" cy="846" r="0.9" fill="#b9ab90" opacity="0.78"/><circle cx="1288" cy="344" r="1.8" fill="#b9ab90" opacity="0.81"/></g>
+
+<!-- Helios Ring I : continuous torus between Earth and Mars -->
+<g fill="none">
+<circle cx="-1380" cy="500" r="2200" stroke="#f0b860" stroke-width="22" opacity="0.18"/>
+<circle cx="-1380" cy="500" r="2191" stroke="#f0b860" stroke-width="1.5"/>
+<circle cx="-1380" cy="500" r="2209" stroke="#f0b860" stroke-width="1.5"/>
+<circle cx="-1380" cy="500" r="2200" stroke="#f8d9a0" stroke-width="8" stroke-dasharray="3 14"/>
+</g>
+<!-- Helios Ring II : belt ring between Mars and Jupiter -->
+<g fill="none">
+<circle cx="-1380" cy="500" r="2680" stroke="#66c2d4" stroke-width="22" opacity="0.18"/>
+<circle cx="-1380" cy="500" r="2671" stroke="#66c2d4" stroke-width="1.5"/>
+<circle cx="-1380" cy="500" r="2689" stroke="#66c2d4" stroke-width="1.5"/>
+<circle cx="-1380" cy="500" r="2680" stroke="#b8ecf4" stroke-width="8" stroke-dasharray="3 14"/>
+</g>
+
+<!-- Transit routes (dotted) -->
+<g fill="none" stroke="#e8e2d4" stroke-width="1.3" stroke-dasharray="2 5" opacity="0.75">
+<path d="M690 520 L810 520"/>
+<path d="M972 500 L830 500"/>
+<path d="M787 880 Q1030 960 1273 880"/>
+<path d="M1000 528 Q1120 620 1294 600"/>
+</g>
+
+<!-- Resource flows into Ring II (dashed gold) -->
+<g fill="none" stroke="#d9b36a" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#mGold)">
+<path d="M1530 500 L1312 500"/>
+<path d="M1640 272 Q1460 230 1302 252"/>
+<path d="M1590 600 Q1470 720 1305 722"/>
+<path d="M1232 832 L1262 812"/>
+<path d="M1232 382 L1264 372"/>
+<path d="M1346 612 L1310 606"/>
+<path d="M1352 166 L1287 140"/>
+</g>
+
+<!-- Mercury, Venus -->
+<circle cx="205" cy="500" r="12" fill="url(#gMercury)"/>
+<circle cx="290" cy="500" r="26" fill="url(#gVenus)"/>
+<circle cx="290" cy="500" r="32" fill="none" stroke="#f0b860" stroke-width="1" opacity="0.6"/>
+
+<!-- Earth system -->
+<circle cx="560" cy="520" r="230" fill="none" stroke="#8a7a5c" stroke-width="1" stroke-dasharray="4 4" opacity="0.7"/>
+<circle cx="560" cy="520" r="130" fill="none" stroke="#e8e2d4" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<circle cx="560" cy="520" r="62" fill="#7cc4ef" opacity="0.10"/>
+<circle cx="560" cy="520" r="48" fill="url(#gEarth)"/>
+<path d="M531 494 q12 -10 24 -4 q8 10 -4 18 q-14 4 -20 -14 z M566 528 q14 -6 22 4 q2 14 -12 18 q-12 -6 -10 -22 z" fill="#5f9a56" opacity="0.85"/>
+<path d="M520 520 q20 -14 44 -6 M552 552 q18 -8 34 0" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.55"/>
+<circle cx="560" cy="520" r="48" fill="url(#gShade)"/>
+<circle cx="708" cy="344" r="14" fill="url(#gMoon)"/>
+<circle cx="708" cy="344" r="14" fill="url(#gShade)"/>
+
+<!-- Six cislunar torus stations -->
+<g fill="none" stroke="#f0b860">
+<g transform="translate(690 520)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+<g transform="translate(625 633)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+<g transform="translate(495 633)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+<g transform="translate(430 520)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+<g transform="translate(495 407)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+<g transform="translate(625 407)"><ellipse rx="13" ry="5.5" stroke-width="3.5"/><path d="M-11 0 L11 0 M0 -5 L0 5" stroke-width="0.8"/></g>
+</g>
+
+<!-- Mars -->
+<circle cx="1000" cy="500" r="26" fill="url(#gMars)"/>
+<circle cx="1000" cy="500" r="26" fill="url(#gShade)"/>
+<circle cx="1036" cy="482" r="2.5" fill="#c9bfae"/>
+<circle cx="1046" cy="516" r="2" fill="#c9bfae"/>
+
+<!-- Named asteroids -->
+<circle cx="1226" cy="386" r="7" fill="#a59e92"/>
+<circle cx="1352" cy="614" r="5" fill="#b8ad98"/>
+<circle cx="1226" cy="836" r="5" fill="#c8c4bc" stroke="#ffffff" stroke-width="0.8"/>
+<circle cx="1358" cy="168" r="5" fill="#9b958a"/>
+
+<!-- Jupiter and moons -->
+<line x1="1650" y1="150" x2="1650" y2="382" stroke="#8a7a5c" stroke-width="1" opacity="0.6"/>
+<circle cx="1650" cy="150" r="6" fill="#d6d2c8"/>
+<circle cx="1650" cy="210" r="7" fill="#e6e1d4"/>
+<circle cx="1650" cy="270" r="5" fill="#f2ecdc"/>
+<circle cx="1650" cy="330" r="5" fill="#f2d27a"/>
+<circle cx="1650" cy="500" r="134" fill="none" stroke="#d9b36a" stroke-width="1" opacity="0.6"/>
+<circle cx="1650" cy="500" r="126" fill="none" stroke="#d9b36a" stroke-width="1" opacity="0.35"/>
+<g clip-path="url(#cJupiter)">
+<rect x="1530" y="380" width="240" height="240" fill="#e9b787"/>
+<rect x="1530" y="408" width="240" height="22" fill="#c98a5a"/>
+<rect x="1530" y="446" width="240" height="14" fill="#f4d7b2"/>
+<rect x="1530" y="470" width="240" height="26" fill="#b8703e"/>
+<rect x="1530" y="512" width="240" height="18" fill="#f1cfa4"/>
+<rect x="1530" y="540" width="240" height="24" fill="#c47d4b"/>
+<rect x="1530" y="578" width="240" height="14" fill="#e5b085"/>
+<ellipse cx="1700" cy="548" rx="20" ry="10" fill="#b5502e"/>
+<circle cx="1650" cy="500" r="118" fill="url(#gShade)"/>
+</g>
+
+<!-- Saturn -->
+<g transform="rotate(-12 2000 500)"><ellipse cx="2000" cy="500" rx="125" ry="30" fill="none" stroke="#efe2c4" stroke-width="12" opacity="0.9"/><ellipse cx="2000" cy="500" rx="104" ry="23" fill="none" stroke="#c9b48c" stroke-width="4" opacity="0.8"/></g>
+<circle cx="2000" cy="500" r="70" fill="url(#gSaturn)"/>
+<circle cx="2000" cy="500" r="70" fill="url(#gShade)"/>
+<g transform="rotate(-12 2000 500)"><ellipse cx="2000" cy="500" rx="125" ry="30" fill="none" stroke="#efe2c4" stroke-width="12" opacity="0.95" clip-path="url(#cSatFront)"/><ellipse cx="2000" cy="500" rx="104" ry="23" fill="none" stroke="#c9b48c" stroke-width="4" clip-path="url(#cSatFront)"/></g>
+
+<!-- Uranus, Neptune -->
+<circle cx="2195" cy="500" r="36" fill="url(#gUranus)"/>
+<circle cx="2195" cy="500" r="36" fill="url(#gShade)"/>
+<circle cx="2315" cy="500" r="36" fill="url(#gNeptune)"/>
+<circle cx="2315" cy="500" r="36" fill="url(#gShade)"/>
+</svg>
+
+<!-- Upper labels -->
+<p class="lbl" style="left: 28px; top: 486px; font-size: 18px; font-weight: 600; color: #2a1206">The Sun</p>
+<p class="lbl" style="left: 180px; top: 524px; font-size: 11px; color: #e8e2d4">Mercury</p>
+<p class="lbl" style="left: 264px; top: 540px; font-size: 11px; color: #e8e2d4">Venus</p>
+<p class="lbl" style="left: 530px; top: 511px; font-size: 13px; font-weight: 600; color: #ffffff">Earth</p>
+<p class="lbl" style="left: 728px; top: 336px; font-size: 11px; color: #e8e2d4">The Moon</p>
+<p class="lbl" style="left: 372px; top: 676px; font-size: 11px; color: #f0b860">Cislunar Rings ×6</p>
+<p class="lbl" style="left: 372px; top: 694px; font-size: 10px; color: #b8ab8e">~35 km tori · Earth orbit</p>
+<p class="lbl" style="left: 974px; top: 538px; font-size: 13px; font-weight: 600; color: #e8e2d4">Mars</p>
+<p class="lbl" style="left: 1184px; top: 402px; font-size: 11px; color: #e8e2d4">1 Ceres</p>
+<p class="lbl" style="left: 1166px; top: 418px; font-size: 10px; color: #d9b36a">Ice · regolith</p>
+<p class="lbl" style="left: 1362px; top: 622px; font-size: 11px; color: #e8e2d4">4 Vesta</p>
+<p class="lbl" style="left: 1160px; top: 850px; font-size: 11px; color: #e8e2d4">16 Psyche</p>
+<p class="lbl" style="left: 1160px; top: 866px; font-size: 10px; color: #d9b36a">Nickel-iron</p>
+<p class="lbl" style="left: 1368px; top: 172px; font-size: 11px; color: #e8e2d4">2 Pallas</p>
+<p class="lbl" style="left: 1184px; top: 966px; font-size: 10px; color: #b8ab8e">Main Asteroid Belt</p>
+<p class="lbl" style="left: 1664px; top: 142px; font-size: 11px; color: #e8e2d4">Callisto</p>
+<p class="lbl" style="left: 1664px; top: 202px; font-size: 11px; color: #e8e2d4">Ganymede</p>
+<p class="lbl" style="left: 1664px; top: 262px; font-size: 11px; color: #e8e2d4">Europa</p>
+<p class="lbl" style="left: 1664px; top: 322px; font-size: 11px; color: #e8e2d4">Io</p>
+<p class="lbl" style="left: 1404px; top: 210px; font-size: 10px; color: #d9b36a">Europa water ice</p>
+<p class="lbl" style="left: 1356px; top: 478px; font-size: 10px; color: #d9b36a">H₂ · He-3 · NH₃</p>
+<p class="lbl" style="left: 1392px; top: 736px; font-size: 10px; color: #d9b36a">Atmosphere skimmers</p>
+<p class="lbl" style="left: 1596px; top: 491px; font-size: 18px; font-weight: 600; color: #3a1d0c">Jupiter</p>
+<p class="lbl" style="left: 1955px; top: 492px; font-size: 14px; font-weight: 600; color: #3a2a14">Saturn</p>
+<p class="lbl" style="left: 2166px; top: 548px; font-size: 12px; font-weight: 600; color: #e8e2d4">Uranus</p>
+<p class="lbl" style="left: 2280px; top: 548px; font-size: 12px; font-weight: 600; color: #e8e2d4">Neptune</p>
+<p class="lbl" style="left: 900px; top: 930px; font-size: 10px; color: #b8ab8e">Inter-ring freight</p>
+<p class="lbl" style="left: 1090px; top: 548px; font-size: 10px; color: #b8ab8e">Mars–belt route</p>
+
+<div style="position: absolute; left: 796px; top: 40px; padding: 10px 14px; border: 1px solid #f0b860; background-color: #0a0b10; display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">HELIOS RING I</p>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.1em; color: #e8e2d4">≈1.25 AU RADIUS · CONTINUOUS TORUS</p>
+</div>
+<div style="position: absolute; left: 1384px; top: 40px; padding: 10px 14px; border: 1px solid #66c2d4; background-color: #0a0b10; display: flex; flex-direction: column; gap: 4px">
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.16em; color: #66c2d4">HELIOS RING II · BELT RING</p>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.1em; color: #e8e2d4">≈2.7 AU RADIUS · FED BY BELT + JUPITER</p>
+</div>
+
+<!-- Catalog panels -->
+<div style="position: absolute; left: 40px; top: 1020px; width: 2320px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+
+<section style="border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">01</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">HELIOS RING I · EARTH–MARS</h2>
+</div>
+<div style="display: flex; gap: 20px; padding: 18px 16px; align-items: center">
+<svg width="260" height="260" viewBox="0 0 260 260" role="img" aria-label="Cross-section of the ring tube: land and window strips around a spinning cylinder">
+<defs><marker id="mSpin1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f0b860"/></marker></defs>
+<circle cx="130" cy="130" r="100" fill="#10131c" stroke="#f0b860" stroke-width="2"/>
+<circle cx="130" cy="130" r="88" fill="#16233a"/>
+<circle cx="130" cy="130" r="94" fill="none" stroke="#7fc4e0" stroke-width="12" opacity="0.45"/>
+<circle cx="130" cy="130" r="94" fill="none" stroke="#6f8b52" stroke-width="12" stroke-dasharray="98.4 98.4"/>
+<circle cx="130" cy="130" r="3" fill="#f0b860"/>
+<path d="M130 130 L130 42 M130 130 L206 174 M130 130 L54 174" stroke="#f0b860" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.7"/>
+<path d="M200 46 A116 116 0 0 1 244 120" fill="none" stroke="#f0b860" stroke-width="1.6" marker-end="url(#mSpin1)"/>
+</svg>
+<dl class="spec">
+<dt>Form</dt><dd>Continuous torus, built in segments</dd>
+<dt>Orbit radius</dt><dd>≈1.25 AU, between Earth and Mars</dd>
+<dt>Circumference</dt><dd>≈1.17 billion km</dd>
+<dt>Solar period</dt><dd>≈1.4 years, every segment in free orbit</dd>
+<dt>Gravity</dt><dd>Spin about the tube axis; land inside the hull</dd>
+<dt>Interior</dt><dd>Alternating land and window strips</dd>
+<dt>Links</dt><dd>Transfer docks to Earth and Mars</dd>
+</dl>
+</div>
+</section>
+
+<section style="border: 1px solid #2f4a50; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2f4a50">
+<span style="background-color: #66c2d4; color: #06181c; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">02</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #66c2d4">HELIOS RING II · MARS–JUPITER</h2>
+</div>
+<div style="display: flex; gap: 20px; padding: 18px 16px; align-items: center">
+<svg width="260" height="260" viewBox="0 0 260 260" role="img" aria-label="Cross-section of the belt ring with an attached refinery deck and incoming ore and volatiles">
+<defs><marker id="mIn2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d9b36a"/></marker></defs>
+<circle cx="130" cy="112" r="90" fill="#10131c" stroke="#66c2d4" stroke-width="2"/>
+<circle cx="130" cy="112" r="78" fill="#16233a"/>
+<circle cx="130" cy="112" r="84" fill="none" stroke="#7fc4e0" stroke-width="11" opacity="0.45"/>
+<circle cx="130" cy="112" r="84" fill="none" stroke="#6f8b52" stroke-width="11" stroke-dasharray="88 88"/>
+<circle cx="130" cy="112" r="3" fill="#66c2d4"/>
+<rect x="80" y="206" width="100" height="26" fill="#1a2a2e" stroke="#66c2d4" stroke-width="1.5"/>
+<line x1="130" y1="202" x2="130" y2="206" stroke="#66c2d4" stroke-width="3"/>
+<path d="M92 219 L168 219" stroke="#66c2d4" stroke-width="1" stroke-dasharray="4 3"/>
+<path d="M14 250 L76 224" fill="none" stroke="#d9b36a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#mIn2)"/>
+<path d="M246 250 L184 224" fill="none" stroke="#d9b36a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#mIn2)"/>
+</svg>
+<dl class="spec">
+<dt>Form</dt><dd>Continuous torus with refinery decks</dd>
+<dt>Orbit radius</dt><dd>≈2.7 AU, inside the main belt</dd>
+<dt>Circumference</dt><dd>≈2.54 billion km</dd>
+<dt>Solar period</dt><dd>≈4.4 years</dd>
+<dt>Metals</dt><dd>M-type asteroids such as 16 Psyche</dd>
+<dt>Water · ice</dt><dd>1 Ceres and Europa</dd>
+<dt>Volatiles</dt><dd>H₂, He-3, NH₃ from Jovian skimmers</dd>
+</dl>
+</div>
+</section>
+
+<section style="border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">03</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">CISLUNAR RINGS · ×6</h2>
+</div>
+<div style="display: flex; gap: 20px; padding: 18px 16px; align-items: center">
+<svg width="260" height="260" viewBox="0 0 260 260" role="img" aria-label="Top view of a spoked torus station with a scale bar of one thousand ISS lengths">
+<circle cx="130" cy="112" r="90" fill="none" stroke="#f0b860" stroke-width="16" opacity="0.9"/>
+<circle cx="130" cy="112" r="90" fill="none" stroke="#1a1206" stroke-width="1" stroke-dasharray="6 10"/>
+<g stroke="#f0b860" stroke-width="2"><line x1="130" y1="112" x2="130" y2="30"/><line x1="130" y1="112" x2="201" y2="153"/><line x1="130" y1="112" x2="59" y2="153"/><line x1="130" y1="112" x2="130" y2="194"/><line x1="130" y1="112" x2="201" y2="71"/><line x1="130" y1="112" x2="59" y2="71"/></g>
+<circle cx="130" cy="112" r="14" fill="#10131c" stroke="#f0b860" stroke-width="2"/>
+<line x1="20" y1="236" x2="240" y2="236" stroke="#e8e2d4" stroke-width="1.5"/>
+<line x1="20" y1="230" x2="20" y2="242" stroke="#e8e2d4" stroke-width="1.5"/>
+<line x1="240" y1="230" x2="240" y2="242" stroke="#e8e2d4" stroke-width="1.5"/>
+</svg>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<dl class="spec">
+<dt>Count</dt><dd>6 stations sharing one Earth orbit</dd>
+<dt>Form</dt><dd>Spinning torus with six spokes</dd>
+<dt>Circumference</dt><dd>≈109 km, about 1,000 ISS lengths</dd>
+<dt>Diameter</dt><dd>≈35 km</dd>
+<dt>Orbit</dt><dd>Around Earth, inside lunar distance</dd>
+<dt>Role</dt><dd>Gateway to the two solar rings</dd>
+</dl>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">AURORA</span>
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">HALCYON</span>
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">MERIDIAN</span>
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">KESTREL</span>
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">LUMEN</span>
+<span style="border: 1px solid #f0b860; padding: 3px 8px; font-size: 11px; letter-spacing: 0.12em; color: #f0b860">VESPER</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Title band and legend -->
+<div style="position: absolute; left: 40px; top: 1450px; width: 2320px; height: 120px; display: flex; gap: 20px">
+<div style="flex: 1 1 auto; border: 2px solid #e8e2d4; display: flex; align-items: center; padding: 0 40px">
+<h1 style="margin: 0; font-size: 62px; font-weight: 500; letter-spacing: 0.32em; color: #f3eee2; white-space: nowrap">THE CHART OF SETTLED ORBITS</h1>
+</div>
+<div style="flex: 0 0 520px; border: 1px solid #4a4232; padding: 12px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; align-content: center">
+<div style="display: flex; align-items: center; gap: 10px"><svg width="40" height="14" aria-hidden="true"><line x1="0" y1="7" x2="40" y2="7" stroke="#f0b860" stroke-width="8" stroke-dasharray="3 5"/></svg><span style="font-size: 11px; letter-spacing: 0.1em">SETTLEMENT RING</span></div>
+<div style="display: flex; align-items: center; gap: 10px"><svg width="40" height="14" aria-hidden="true"><line x1="0" y1="7" x2="40" y2="7" stroke="#8a7a5c" stroke-width="1.2"/></svg><span style="font-size: 11px; letter-spacing: 0.1em">PLANET ORBIT</span></div>
+<div style="display: flex; align-items: center; gap: 10px"><svg width="40" height="14" aria-hidden="true"><line x1="0" y1="7" x2="40" y2="7" stroke="#d9b36a" stroke-width="1.6" stroke-dasharray="7 5"/></svg><span style="font-size: 11px; letter-spacing: 0.1em">RESOURCE FLOW</span></div>
+<div style="display: flex; align-items: center; gap: 10px"><svg width="40" height="14" aria-hidden="true"><line x1="0" y1="7" x2="40" y2="7" stroke="#e8e2d4" stroke-width="1.3" stroke-dasharray="2 5"/></svg><span style="font-size: 11px; letter-spacing: 0.1em">TRANSIT ROUTE</span></div>
+<p style="grid-column: 1 / -1; margin: 4px 0 0; font-size: 10px; letter-spacing: 0.12em; color: #b8ab8e">NOT TO SCALE · SPECULATIVE CONCEPT</p>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

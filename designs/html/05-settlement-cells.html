@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Settlement Cells</title>
+
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>body{width:2400px;height:1600px;overflow:hidden} h1{font-size:44px !important;letter-spacing:0.24em !important}
+body{margin:0}
+a{color:#d9b36a}a:hover{color:#f0d29a}
+.stars{background-image:radial-gradient(1px 1px at 12% 18%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#ffffff 50%,transparent 51%);background-size:310px 230px,410px 290px,520px 370px}
+.mix{width:100%;border-collapse:collapse;font-size:13px}
+.mix th{text-align:left;font-weight:500;font-size:11px;letter-spacing:0.12em;color:#b8ab8e;padding:7px 10px;border-bottom:1px solid #6b6252}
+.mix td{padding:6px 10px;border-bottom:1px solid #2a261e;color:#ece6d8;font-variant-numeric:tabular-nums}
+</style>
+
+<div class="stars" style="position: relative; width: 2400px; height: 1600px; overflow: hidden; background-color: #0a0b10; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #e8e2d4">
+
+<section style="position: absolute; left: 40px; top: 40px; width: 520px; height: 650px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">A</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">45 LEVELS IN EVERY CELL</h2>
+</div>
+<svg width="518" height="400" viewBox="0 0 518 400" role="img" aria-label="Tube cross-section split into four zones: hardware base levels 1 to 4, function floors 5 to 30, open sky 31 to 43, light and air plenum 44 and 45">
+<defs><clipPath id="lvc"><circle cx="170" cy="200" r="170"/></clipPath></defs>
+<circle cx="170" cy="200" r="170" fill="#16233a"/>
+<g clip-path="url(#lvc)">
+<rect x="0" y="340" width="340" height="30" fill="#3a3530"/>
+<rect x="0" y="143" width="340" height="197" fill="#e6b85c" opacity="0.85"/>
+<rect x="0" y="45" width="340" height="98" fill="#16233a"/>
+<rect x="0" y="30" width="340" height="15" fill="#7fd6ec" opacity="0.35"/>
+</g>
+<path d="M118 34 A170 170 0 0 1 222 34" fill="none" stroke="#7fd6ec" stroke-width="7"/>
+<circle cx="170" cy="200" r="170" fill="none" stroke="#f0b860" stroke-width="3"/>
+<g font-family="IBM Plex Mono, monospace" font-size="12">
+<line x1="250" y1="30" x2="360" y2="30" stroke="#7fd6ec"/><text x="366" y="26" fill="#7fd6ec">L44–45</text><text x="366" y="42" fill="#b8ab8e">light + air plenum</text>
+<line x1="320" y1="95" x2="360" y2="95" stroke="#8a806c"/><text x="366" y="91" fill="#e8e2d4">L31–43</text><text x="366" y="107" fill="#b8ab8e">open sky, roof gardens</text>
+<line x1="330" y1="240" x2="360" y2="240" stroke="#e6b85c"/><text x="366" y="236" fill="#e6b85c">L5–30</text><text x="366" y="252" fill="#b8ab8e">function floors</text><text x="366" y="268" fill="#b8ab8e">(varies by cell)</text>
+<line x1="290" y1="352" x2="360" y2="352" stroke="#9a917f"/><text x="366" y="348" fill="#e8e2d4">L1–4</text><text x="366" y="364" fill="#b8ab8e">hardware base</text>
+</g>
+</svg>
+<div style="padding: 0 18px 16px; display: flex; flex-direction: column; gap: 10px">
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #ece6d8">Each level is 3.33 m, so 45 levels fill the 150 m tube. "Down" is outward, so L1 sits on the hull.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #ece6d8">Every cell is 180 m long and has its own L1–4 hardware base: air handlers, water and waste lines, coolant, power, the district train and a refuge floor.</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #b8ab8e">Gravity varies only 0.9% between L1 and L45.</p>
+</div>
+</section>
+
+<section style="position: absolute; left: 580px; top: 40px; width: 1780px; height: 650px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">B</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">CELL TYPES · CROSS-SECTIONS</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; padding: 12px 16px">
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-res.svg" alt="Residence cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #e6b85c">HOME · RESIDENCE</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">L5–30 terraced homes either side of a 40 m green canyon. Roof gardens on L31. ~3,600 residents.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-lab.svg" alt="Research cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #9fb7e8">LAB · RESEARCH</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">L5–8 heavy labs on the hull, L9–28 labs and offices, a clean-room core and a 20 m light well.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-farm.svg" alt="Farming cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #7fbf5a">FARM · FARMING</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">9 growing tiers, 5 m each, up to L18, fed by light pipes. A deep-soil orchard tier on top under daylight. Feeds ~4,500.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-out.svg" alt="Great outdoors cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #6fae4f">WILD · GREAT OUTDOORS</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Forested hills climb the walls to ~L18, around a river and trails. The hills are hollow, with storage and water tanks inside.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-wat.svg" alt="Waterfront cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #5aa6d6">WATER · WATERFRONT</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">A 3 m-deep swimming lake, sand beaches, a diving tower and cliff-side cafés.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-food.svg" alt="Food and night cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #e07a5f">FOOD · FOOD AND NIGHT</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Food halls, markets, bars, clubs and a concert plaza strung with lights. Terraces to L15.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-park.svg" alt="Parks and sports cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #c98a3a">PLAY · PARKS AND SPORTS</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Fields and a running track, stands with gyms inside, and a 55 m climbing wall.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-civ.svg" alt="Civic cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #d8a0b8">CIVIC · HEALTH AND LEARNING</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Hospital, schools, university, town hall and a central plaza, to L20.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-hw.svg" alt="Hardware support plant cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #b8ad98">PLANT · HARDWARE SUPPORT</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">One per district, to L20: air revitalisation, water master plant, digesters, coolant pumps, power, spares, robot depot.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-ind.svg" alt="Industry cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #c98a3a">MAKE · INDUSTRY AND REPAIR</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Heavy floors to L16: fabrication, 3D printing, robot repair, recycling smelters.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 4px; align-items: flex-start"><img src="assets/cell-hub.svg" alt="Spoke junction cell cross-section" style="width: 180px; height: 184px"><p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; color: #66c2d4">HUB · SPOKE JUNCTION</p><p style="margin: 0; font-size: 12px; line-height: 1.45; color: #ece6d8">Elevators up the spoke to the hub, cargo docks and emergency command. 6 in the ring.</p></div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; justify-content: center; border: 1px solid #2a261e; padding: 14px">
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #b8ab8e">COLOURS</p>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">Dark band = hardware base<br>Cyan arc = window strip<br>Navy = open sky</p>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #b8ab8e">Cross-sections to scale, 150 m tube.</p>
+</div>
+
+</div>
+</section>
+
+<section style="position: absolute; left: 40px; top: 710px; width: 2320px; height: 260px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">C</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">ONE DISTRICT · 20 CELLS · 3.6 km · REPEATED 30 TIMES</h2>
+</div>
+<div style="display: flex; gap: 24px; padding: 14px 16px; align-items: center">
+<img src="assets/district.svg" alt="Long-section of one district showing 20 cells of different types side by side" style="width: 1820px; height: 171px">
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8; width: 420px">Homes always sit next to a wild, water, food or play cell, so the great outdoors is a short walk from every front door. Each district runs its own plant.</p>
+</div>
+</section>
+
+<section style="position: absolute; left: 40px; top: 990px; width: 1400px; height: 460px; border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">D</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">CELL MIX · 606 CELLS · 109 km</h2>
+</div>
+<div style="padding: 4px 16px 10px">
+<table class="mix">
+<thead><tr><th style="width: 300px">CELL TYPE</th><th style="width: 140px">PER DISTRICT</th><th style="width: 120px">RING TOTAL</th><th style="width: 100px">SHARE</th><th>SUPPORTS</th></tr></thead>
+<tbody>
+<tr><td style="color: #e6b85c">Residence</td><td>5</td><td>150</td><td>25%</td><td>~545,000 residents</td></tr>
+<tr><td style="color: #7fbf5a">Farming</td><td>4</td><td>120</td><td>20%</td><td>Food for ~540,000, plus fermentation and aquaculture</td></tr>
+<tr><td style="color: #9fb7e8">Research</td><td>2</td><td>60</td><td>10%</td><td>Labs; low-g labs up the spokes</td></tr>
+<tr><td style="color: #6fae4f">Great outdoors</td><td>3</td><td>90</td><td>15%</td><td rowspan="4" style="vertical-align: middle; color: #f0b860">Leisure: 30% of the ring, ~32 km</td></tr>
+<tr><td style="color: #5aa6d6">Waterfront</td><td>1</td><td>30</td><td>5%</td></tr>
+<tr><td style="color: #e07a5f">Food and night</td><td>1</td><td>30</td><td>5%</td></tr>
+<tr><td style="color: #c98a3a">Parks and sports</td><td>1</td><td>30</td><td>5%</td></tr>
+<tr><td style="color: #d8a0b8">Civic, health, learning</td><td>1</td><td>30</td><td>5%</td><td>Hospital, schools, university</td></tr>
+<tr><td style="color: #b8ad98">Hardware plant</td><td>1</td><td>30</td><td>5%</td><td>Life support for one district</td></tr>
+<tr><td style="color: #c98a3a">Industry and repair</td><td>1</td><td>30</td><td>5%</td><td>Making and fixing things</td></tr>
+<tr><td style="color: #66c2d4">Spoke junction</td><td>—</td><td>6</td><td>1%</td><td>Access to the hub</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="position: absolute; left: 1460px; top: 990px; width: 900px; height: 460px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="border: 1px solid #f0b860; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #f0b860">POPULATION</p><p style="margin: 0; font-size: 30px; color: #f3eee2">≈550,000</p><p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">About 7× the single-floor garden city, because homes stack 26 levels high. ~80 m² of home and shared space each.</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #f0b860">WEIGHT</p><p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">Stacked floors make the spinning tube about 4× heavier, ~870 t per metre. The basalt hoop bands grow from ~18 Mt to ~80 Mt. Still lunar material, but it's the cost of density.</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #66c2d4">GETTING AROUND</p><p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">Trains in the base cap at ~70 km/h. Faster and riders feel ±10% heavier or lighter with direction; at 300 km/h it's 44% heavier going spinward. For long trips, ride a spoke up, cross the hub, ride down.</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #66c2d4">LOW GRAVITY</p><p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">Gravity fades up the spokes: 0.5 g halfway, near zero at the hub. Space for low-g sports, rehab medicine and microgravity labs.</p></div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; grid-column: 1 / -1"><p style="margin: 0; font-size: 11px; letter-spacing: 0.14em; color: #66c2d4">SAFETY</p><p style="margin: 0; font-size: 12px; line-height: 1.5; color: #ece6d8">Pressure doors at every cell boundary turn the ring into 606 sealed compartments. Every base has a refuge floor with its own air and water.</p></div>
+</section>
+
+<div style="position: absolute; left: 40px; top: 1470px; width: 2320px; height: 100px; display: flex; gap: 20px">
+<div style="flex: 1 1 auto; border: 2px solid #e8e2d4; display: flex; align-items: center; padding: 0 40px">
+<h1 style="margin: 0; font-size: 54px; font-weight: 500; letter-spacing: 0.32em; color: #f3eee2; white-space: nowrap">SETTLEMENT CELLS</h1>
+</div>
+<div style="flex: 0 0 520px; border: 1px solid #4a4232; padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">ORDER-OF-MAGNITUDE ESTIMATES</p>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">SPECULATIVE CONCEPT</p>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

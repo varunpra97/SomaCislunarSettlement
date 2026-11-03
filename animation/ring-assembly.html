@@ -1,0 +1,322 @@
+<title>Ring Assembly Sequence</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+/* Layout: one stage (the animated scene) over a caption + controls strip; single dark "space" look by choice */
+:root{
+  --bg:#0a0b10; --panel:#11131b; --line:#2c2a24; --fg:#ece6d8; --muted:#a99f88;
+  --gold:#f0b860; --cyan:#66c2d4; --glass:#7fd6ec; --keel:#c98a3a; --steel:#9a917f;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace; --sans:'IBM Plex Sans',system-ui,sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans)}
+.wrap{max-width:960px;margin:0 auto;padding-block:20px 32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:14px}
+header{display:flex;flex-direction:column;gap:4px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin:0}
+h1{font-family:var(--mono);font-weight:500;font-size:clamp(20px,4vw,30px);letter-spacing:.14em;margin:0;text-wrap:balance}
+.stage{position:relative;border:1px solid var(--line);background:var(--bg);background-image:radial-gradient(1px 1px at 12% 18%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#fff 50%,transparent 51%),radial-gradient(1px 1px at 83% 61%,#fff3d6 50%,transparent 51%);background-size:310px 230px,410px 290px,520px 370px,270px 330px}
+.stage svg{display:block;width:100%;height:auto;font-family:var(--mono)}
+.badge{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--bg);background:var(--cyan);padding:3px 8px}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.steps button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-align:left;background:var(--panel);color:var(--muted);border:1px solid var(--line);padding:8px;cursor:pointer;min-height:44px;display:flex;flex-direction:column;gap:2px}
+.steps button b{font-weight:600;color:var(--fg)}
+.steps button[aria-current="step"]{border-color:var(--gold);color:var(--gold)}
+.steps button[aria-current="step"] b{color:var(--gold)}
+.steps button:focus-visible,.ctrl button:focus-visible,input[type=range]:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+@media (max-width:560px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.caption{border:1px solid var(--line);background:var(--panel);padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-height:96px}
+.caption h2{margin:0;font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.12em;color:var(--gold)}
+.caption p{margin:0;font-size:15px;line-height:1.55;max-width:68ch}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ctrl button{font-family:var(--mono);font-size:12px;letter-spacing:.1em;background:transparent;color:var(--fg);border:1px solid var(--steel);padding:10px 14px;min-height:44px;cursor:pointer}
+.ctrl button.primary{background:var(--gold);color:#1a1206;border-color:var(--gold);font-weight:600}
+.ctrl input{flex:1 1 200px;min-width:0;accent-color:var(--gold)}
+.clock{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:5ch}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Cislunar ring · building one 18 m bay</p>
+    <h1>RING ASSEMBLY SEQUENCE</h1>
+  </header>
+
+  <div class="stage">
+    <svg id="svg" viewBox="0 0 800 520" role="img" aria-label="Animation of robotic arms unloading a Starship and assembling a ring frame and hull panels for one bay of the cislunar ring">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f0b860"/></marker>
+      </defs>
+
+      <!-- Scene A: end-on view down the tube -->
+      <g id="sceneA">
+        <rect x="140" y="50" width="440" height="440" fill="none" stroke="#2c4a52" stroke-dasharray="6 6"/>
+        <g stroke="#2c4a52" stroke-width="2"><line x1="140" y1="50" x2="213" y2="123"/><line x1="580" y1="50" x2="507" y2="123"/><line x1="140" y1="490" x2="213" y2="417"/><line x1="580" y1="490" x2="507" y2="417"/></g>
+        <circle id="pressure" cx="360" cy="270" r="168" fill="#66c2d4" opacity="0"/>
+        <circle cx="360" cy="270" r="208" fill="none" stroke="#66c2d4" stroke-width="2" stroke-dasharray="4 5" opacity="0.7"/>
+        <circle cx="360" cy="270" r="170" fill="none" stroke="#3a372f" stroke-width="1" stroke-dasharray="2 6"/>
+        <g id="frames"></g>
+        <g id="panels"></g>
+        <g id="seams"></g>
+        <text x="152" y="70" font-size="11" fill="#66c2d4" letter-spacing="1.2">BAY FACTORY JIG</text>
+        <text x="152" y="86" font-size="10" fill="#a99f88">rail runs around the ring</text>
+        <text id="lblCenter" x="360" y="266" text-anchor="middle" font-size="12" fill="#a99f88">150 m TUBE</text>
+        <text id="lblCenter2" x="360" y="284" text-anchor="middle" font-size="10" fill="#a99f88">view down its length</text>
+        <text id="lblTest" x="360" y="276" text-anchor="middle" font-size="14" fill="#66c2d4" opacity="0" font-weight="600">LEAK TEST · 50 kPa · PASSED</text>
+
+        <!-- Starship -->
+        <g id="ship">
+          <path d="M610 418 Q572 424 552 440 Q572 456 610 462 Z" fill="#d6d2c8"/>
+          <rect x="610" y="418" width="180" height="44" fill="#c9c5ba"/>
+          <path d="M760 418 L790 400 L790 418 Z M760 462 L790 480 L790 462 Z" fill="#a8a49a"/>
+          <rect x="652" y="420" width="76" height="22" fill="#1a1810"/>
+          <g stroke="#f0b860" stroke-width="1"><line x1="654" y1="424" x2="726" y2="424"/><line x1="654" y1="428" x2="726" y2="428"/><line x1="654" y1="432" x2="726" y2="432"/><line x1="654" y1="436" x2="726" y2="436"/><line x1="654" y1="440" x2="726" y2="440"/></g>
+          <rect id="door" x="650" y="414" width="80" height="6" fill="#e8e4da"/>
+          <text x="640" y="486" font-size="11" fill="#e8e2d4" letter-spacing="1.2">STARSHIP</text>
+        </g>
+        <line id="clamp" x1="580" y1="440" x2="556" y2="440" stroke="#66c2d4" stroke-width="3" opacity="0"/>
+
+        <!-- Loading arm (fixed) -->
+        <line x1="580" y1="325" x2="610" y2="325" stroke="#2c4a52" stroke-width="4"/>
+        <polyline id="fetchArm" fill="none" stroke="#66c2d4" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle id="fetchElbow" r="5" fill="#0a0b10" stroke="#66c2d4" stroke-width="2"/>
+        <circle cx="610" cy="325" r="7" fill="#66c2d4"/>
+        <rect id="fetchHand" width="10" height="10" fill="#66c2d4"/>
+        <text x="618" y="312" font-size="10" fill="#66c2d4" letter-spacing="1">LOADING ARM</text>
+
+        <!-- Rail cart + walker arm -->
+        <polyline id="walkArm" fill="none" stroke="#7fd6ec" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle id="walkElbow" r="4" fill="#0a0b10" stroke="#7fd6ec" stroke-width="2"/>
+        <rect id="cart" width="18" height="12" x="-9" y="-6" fill="#66c2d4"/>
+        <rect id="walkHand" width="8" height="8" fill="#7fd6ec"/>
+        <text id="cartLbl" font-size="10" fill="#7fd6ec" letter-spacing="1">CART + WALKER ARM</text>
+
+        <!-- Item in transit -->
+        <line id="carry" stroke-linecap="butt" opacity="0"/>
+
+        <!-- Weld crawler -->
+        <g id="crawler" opacity="0"><rect x="-7" y="-5" width="14" height="10" fill="#66c2d4"/><circle id="spark" cx="7" cy="0" r="4" fill="#ffe29a"/></g>
+      </g>
+
+      <!-- Scene B: side view, jig stepping along -->
+      <g id="sceneB" opacity="0">
+        <text x="40" y="60" font-size="12" fill="#a99f88" letter-spacing="1.2">SIDE VIEW · THE TUBE GROWS ONE BAY AT A TIME</text>
+        <g id="bays"></g>
+        <g id="jigB">
+          <rect x="-6" y="180" width="16" height="180" fill="none" stroke="#66c2d4" stroke-width="2"/>
+          <path d="M-60 400 L60 400 L60 420 L-60 420 Z" fill="#c9c5ba"/>
+          <path d="M-60 400 Q-84 404 -92 410 Q-84 416 -60 420 Z" fill="#d6d2c8"/>
+          <line x1="2" y1="360" x2="2" y2="400" stroke="#66c2d4" stroke-width="2"/>
+          <text x="-30" y="170" font-size="11" fill="#66c2d4" letter-spacing="1">JIG</text>
+        </g>
+        <text id="stepLbl" x="0" y="392" font-size="13" fill="#f0b860" opacity="0">+18 m</text>
+      </g>
+
+      <!-- Scene C: whole ring from above -->
+      <g id="sceneC" opacity="0">
+        <text x="40" y="60" font-size="12" fill="#a99f88" letter-spacing="1.2">WHOLE RING · 6 FACTORIES, 12 BUILD FRONTS</text>
+        <g id="ringC">
+          <circle cx="400" cy="280" r="190" fill="none" stroke="#3a372f" stroke-width="18"/>
+          <path id="ringGrow" fill="none" stroke="#f0b860" stroke-width="18"/>
+          <g id="spokes" stroke="#f0b860" stroke-width="3"></g>
+          <circle cx="400" cy="280" r="20" fill="#11131b" stroke="#f0b860" stroke-width="2"/>
+          <circle cx="400" cy="280" r="8" fill="#66c2d4"/>
+          <g id="factories"></g>
+        </g>
+        <path id="spinArrow" d="M612 160 A240 240 0 0 1 640 270" fill="none" stroke="#f0b860" stroke-width="2" marker-end="url(#arr)" opacity="0"/>
+        <text id="spinLbl" x="560" y="470" font-size="13" fill="#f0b860" opacity="0" letter-spacing="1">RING CLOSED · SPIN UP TO 0.23 rpm</text>
+      </g>
+    </svg>
+    <span id="badge" class="badge" hidden>TIME-LAPSE</span>
+  </div>
+
+  <nav class="steps" id="steps" aria-label="Steps"></nav>
+
+  <div class="caption" aria-live="polite">
+    <h2 id="capTitle">1 · DOCK</h2>
+    <p id="capText"></p>
+  </div>
+
+  <div class="ctrl">
+    <button id="play" class="primary" type="button">PAUSE</button>
+    <button id="speed" type="button">SPEED 1×</button>
+    <input id="scrub" type="range" min="0" max="1000" value="0" aria-label="Position in the animation">
+    <span class="clock" id="clock">0:00</span>
+  </div>
+</div>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const $=id=>document.getElementById(id);
+const C={x:360,y:270};
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const ease=u=>u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+const lerp=(a,b,u)=>a+(b-a)*u;
+const rad=d=>d*Math.PI/180;
+const pol=(r,deg)=>[C.x+r*Math.cos(rad(deg)),C.y+r*Math.sin(rad(deg))];
+function lerpAng(a,b,u){let d=((b-a)%360+540)%360-180;return a+d*u;}
+function mk(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e;}
+
+/* ---------- timeline ---------- */
+const SLOW=2.6, FAST=0.3, SLOWN=3;
+const NF=26, NP=28;
+const durs=n=>Array.from({length:n},(_,i)=>i<SLOWN?SLOW:FAST);
+const FD=durs(NF), PD=durs(NP);
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const T={door:4, frame:5.5};
+T.frameEnd=T.frame+sum(FD); T.panel=T.frameEnd; T.panelEnd=T.panel+sum(PD);
+T.weld=T.panelEnd; T.side=T.weld+6; T.over=T.side+6; T.end=T.over+8; T.total=T.end+1.5;
+
+const STEPS=[
+ {n:'Dock',t:0,title:'1 · DOCK',text:"A refuelled Starship full of hull units docks beside the bay factory, a jig that holds the open end of the tube while it's built."},
+ {n:'Unload',t:T.door,title:'2 · UNLOAD',text:"The cargo door opens. A fixed loading arm reaches in, lifts out one unit and hands it to the walker arm. The walker rides a cart on a rail that runs around the jig, like the ISS's Mobile Transporter."},
+ {n:'Frame',t:T.frame+SLOW*0.45,title:'3 · CLOSE THE FRAME',text:"The cart carries each frame arc around the rail and the walker arm sets it in place. 26 arcs latch end to end into the 150 m ring frame."},
+ {n:'Panels',t:T.panel,title:'4 · HANG PANELS',text:"Same loop for the hull panels: hand-off, ride the rail, place. Alignment cones guide each panel onto the frame before latches clamp it. A real bay takes 84 panels; 28 are drawn here."},
+ {n:'Weld',t:T.weld,title:'5 · WELD AND TEST',text:"A crawler robot friction-stir welds every seam. Temporary bulkheads seal the bay at both ends so it can be pressurised and leak-tested on its own."},
+ {n:'Advance',t:T.side,title:'6 · ADVANCE AND CLOSE',text:"The jig steps 18 m along the tube and the cycle repeats. Six factories at the spokes build in both directions; the 12 fronts meet, the ring closes, and it spins up."}
+];
+
+/* ---------- static geometry ---------- */
+const HOME=20, CART_R=208, HOLD_R=188;
+const FR=170, PR=180, FΔ=360/NF, PΔ=360/NP;
+const fAng=k=>10-k*FΔ, pAng=k=>10-k*PΔ;
+function panelColor(a){a=((a%360)+360)%360;if(Math.abs(a-270)<=26)return '#7fd6ec';if(a>=38&&a<=142)return '#c98a3a';return '#f0b860';}
+const frameEls=[],panelEls=[],seamEls=[];
+for(let k=0;k<NF;k++){const a=fAng(k),[x1,y1]=pol(FR,a-FΔ/2),[x2,y2]=pol(FR,a+FΔ/2);frameEls.push(mk('line',{x1,y1,x2,y2,stroke:'#9a917f','stroke-width':6,opacity:0},$('frames')));}
+for(let k=0;k<NP;k++){const a=pAng(k),[x1,y1]=pol(PR,a-PΔ/2),[x2,y2]=pol(PR,a+PΔ/2);panelEls.push(mk('line',{x1,y1,x2,y2,stroke:panelColor(a),'stroke-width':9,opacity:0},$('panels')));
+ const sa=a+PΔ/2,[s1x,s1y]=pol(PR-7,sa),[s2x,s2y]=pol(PR+7,sa);seamEls.push({el:mk('line',{x1:s1x,y1:s1y,x2:s2x,y2:s2y,stroke:'#ffe29a','stroke-width':2.5,opacity:0},$('seams')),a:sa});}
+
+/* side view bays */
+const BAYW=60, BAY0=80, NB0=5;
+const bayEls=[];
+for(let i=0;i<NB0+3;i++){const g=mk('g',{opacity:i<NB0?1:0},$('bays'));const x=BAY0+i*BAYW;
+ mk('rect',{x,y:200,width:BAYW,height:140,fill:'#2a2416',stroke:'#f0b860','stroke-width':1.5},g);
+ mk('line',{x1:x,y1:203,x2:x+BAYW,y2:203,stroke:'#7fd6ec','stroke-width':5},g);
+ mk('line',{x1:x,y1:336,x2:x+BAYW,y2:336,stroke:'#c98a3a','stroke-width':6},g);
+ bayEls.push(g);}
+
+/* overview */
+const RC={x:400,y:280,r:190};
+for(let i=0;i<6;i++){const a=rad(i*60-90);mk('line',{x1:RC.x+20*Math.cos(a),y1:RC.y+20*Math.sin(a),x2:RC.x+181*Math.cos(a),y2:RC.y+181*Math.sin(a)},$('spokes'));
+ mk('rect',{x:RC.x+RC.r*Math.cos(a)-7,y:RC.y+RC.r*Math.sin(a)-7,width:14,height:14,fill:'#66c2d4'},$('factories'));}
+
+/* ---------- arm IK ---------- */
+function ik(b,t,L1,L2,out){let dx=t[0]-b[0],dy=t[1]-b[1],d=Math.hypot(dx,dy);const m=L1+L2-.5;let tx=t[0],ty=t[1];
+ if(d>m){tx=b[0]+dx/d*m;ty=b[1]+dy/d*m;d=m;} d=Math.max(d,1);
+ const a=Math.atan2(ty-b[1],tx-b[0]),B=Math.acos(clamp((L1*L1+d*d-L2*L2)/(2*L1*d),-1,1));
+ const e1=[b[0]+L1*Math.cos(a+B),b[1]+L1*Math.sin(a+B)],e2=[b[0]+L1*Math.cos(a-B),b[1]+L1*Math.sin(a-B)];
+ let e=e1; if(out){const r1=Math.hypot(e1[0]-C.x,e1[1]-C.y),r2=Math.hypot(e2[0]-C.x,e2[1]-C.y);e=r1>r2?e1:e2;} else {e=e1[1]<e2[1]?e1:e2;}
+ return {e,t:[tx,ty]};}
+function drawArm(id,elbowId,handId,b,t,L1,L2,out,hs){const r=ik(b,t,L1,L2,out);
+ $(id).setAttribute('points',`${b[0]},${b[1]} ${r.e[0]},${r.e[1]} ${r.t[0]},${r.t[1]}`);
+ $(elbowId).setAttribute('cx',r.e[0]);$(elbowId).setAttribute('cy',r.e[1]);
+ $(handId).setAttribute('x',r.t[0]-hs/2);$(handId).setAttribute('y',r.t[1]-hs/2);return r.t;}
+
+/* ---------- item cycle ---------- */
+const FETCH_B=[610,325], FETCH_REST=[640,382], PICK=[690,430];
+const HANDOFF=pol(HOLD_R,HOME);
+function locate(ds,tau){let acc=0;for(let k=0;k<ds.length;k++){if(tau<acc+ds[k])return{k,u:(tau-acc)/ds[k]};acc+=ds[k];}return{k:ds.length,u:0};}
+function seg(u,a,b){return clamp((u-a)/(b-a));}
+
+function cycleState(k,u,angFn,R,len){
+ const prevApproach=k===0?HOME:angFn(k-1)+12, approach=angFn(k)+12, slot=angFn(k);
+ let fetch=FETCH_REST,cart=HOME,hold=null,item=null;
+ // fetch arm
+ if(u<.14){fetch=lerp2(FETCH_REST,PICK,ease(seg(u,0,.14)));}
+ else if(u<.32){fetch=lerp2(PICK,HANDOFF,ease(seg(u,.14,.32)));item={p:fetch,ang:lerp(0,HOME+90-180,seg(u,.14,.32))};}
+ else if(u<.4){fetch=HANDOFF;}
+ else if(u<.55){fetch=lerp2(HANDOFF,FETCH_REST,ease(seg(u,.4,.55)));}
+ // cart
+ if(u<.32)cart=lerpAng(prevApproach,HOME,ease(seg(u,0,.32)));
+ else if(u<.4)cart=HOME;
+ else if(u<.78)cart=lerpAng(HOME,approach,ease(seg(u,.4,.78)));
+ else cart=approach;
+ // walker hand
+ if(u<.32){hold=pol(HOLD_R,cart);}
+ else if(u<.78){hold=pol(HOLD_R,cart); if(u>=.32) item={p:hold,ang:cart+90};}
+ else {const tgt=pol(R,slot);const p=lerp2(pol(HOLD_R,cart),tgt,ease(seg(u,.78,1)));hold=p;item={p,ang:lerpAng(cart+90,slot+90,seg(u,.78,1))};}
+ return {fetch,cart,hold,item,len};}
+const lerp2=(a,b,u)=>[lerp(a[0],b[0],u),lerp(a[1],b[1],u)];
+
+/* ---------- render ---------- */
+let t=0,playing=true,speed=1,last=null;
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){playing=false;t=T.panel+SLOW*1.6;}
+
+function render(){
+ const inA=t<T.side, inB=t>=T.side&&t<T.over, inC=t>=T.over;
+ $('sceneA').setAttribute('opacity',inA?1:0);$('sceneB').setAttribute('opacity',inB?1:0);$('sceneC').setAttribute('opacity',inC?1:0);
+
+ if(inA){
+  // ship + door
+  const sx=340*(1-ease(clamp(t/3.4)));$('ship').setAttribute('transform',`translate(${sx},0)`);
+  $('clamp').setAttribute('opacity',t>3.4?1:0);
+  const door=-100*ease(clamp((t-T.door)/1.2));$('door').setAttribute('transform',`rotate(${door} 730 417)`);
+  // frames / panels
+  let fetch=FETCH_REST,cart=HOME,hold=pol(HOLD_R,HOME),item=null,fast=false;
+  const f=locate(FD,Math.max(0,t-T.frame));
+  frameEls.forEach((el,i)=>el.setAttribute('opacity',(t>=T.frame&&i<f.k)?1:0));
+  if(t>=T.frame&&f.k<NF){const s=cycleState(f.k,f.u,fAng,FR,2*FR*Math.sin(rad(FΔ/2)));({fetch,cart,hold}=s);item=s.item&&{...s.item,len:s.len,color:'#9a917f',w:6};fast=f.k>=SLOWN;}
+  const p=locate(PD,Math.max(0,t-T.panel));
+  panelEls.forEach((el,i)=>el.setAttribute('opacity',(t>=T.panel&&i<p.k)?1:0));
+  if(t>=T.panel&&p.k<NP){const s=cycleState(p.k,p.u,pAng,PR,2*PR*Math.sin(rad(PΔ/2)));({fetch,cart,hold}=s);item=s.item&&{...s.item,len:s.len,color:panelColor(pAng(p.k)),w:9};fast=p.k>=SLOWN;}
+  if(t>=T.panelEnd){cart=pAng(NP-1)+12;hold=pol(HOLD_R,cart);}
+  // weld
+  const wu=clamp((t-T.weld)/4.2);
+  const cr=$('crawler');
+  if(t>=T.weld&&wu<1){const a=-80-360*wu;const [x,y]=pol(PR-14,a);cr.setAttribute('opacity',1);cr.setAttribute('transform',`translate(${x},${y}) rotate(${a-90})`);$('spark').setAttribute('r',2+2*Math.abs(Math.sin(t*30)));}else cr.setAttribute('opacity',0);
+  seamEls.forEach(s=>{let passed=false;if(t>=T.weld){const da=((-80-s.a)%360+360)%360;passed=wu*360>=da;}s.el.setAttribute('opacity',t>=T.weld&&passed?(wu<1?1:.55):0);});
+  const pu=clamp((t-T.weld-4.2)/1.8);
+  $('pressure').setAttribute('opacity',t>=T.weld+4.2?(.12+.12*Math.sin(pu*Math.PI*3)):0);
+  $('lblTest').setAttribute('opacity',t>=T.weld+4.6?1:0);
+  $('lblCenter').setAttribute('opacity',t>=T.weld+4.2?0:1);$('lblCenter2').setAttribute('opacity',t>=T.weld+4.2?0:1);
+  // arms
+  drawArm('fetchArm','fetchElbow','fetchHand',FETCH_B,fetch,72,72,false,10);
+  const cb=pol(CART_R,cart);$('cart').setAttribute('transform',`translate(${cb[0]},${cb[1]}) rotate(${cart+90})`);
+  drawArm('walkArm','walkElbow','walkHand',cb,hold,36,36,true,8);
+  const lb=pol(CART_R+26,cart);const cl=$('cartLbl');cl.setAttribute('x',lb[0]);cl.setAttribute('y',lb[1]);cl.setAttribute('text-anchor',Math.cos(rad(cart))<0?'end':'start');
+  // carried item
+  const ce=$('carry');
+  if(item){const h=item.len/2,a=rad(item.ang);ce.setAttribute('x1',item.p[0]-h*Math.cos(a));ce.setAttribute('y1',item.p[1]-h*Math.sin(a));ce.setAttribute('x2',item.p[0]+h*Math.cos(a));ce.setAttribute('y2',item.p[1]+h*Math.sin(a));ce.setAttribute('stroke',item.color);ce.setAttribute('stroke-width',item.w);ce.setAttribute('opacity',1);}else ce.setAttribute('opacity',0);
+  $('badge').hidden=!fast;
+ } else $('badge').hidden=true;
+
+ if(inB){
+  const tau=t-T.side, n=Math.min(3,Math.floor(tau/2)), u=tau-n*2;
+  const moveU=n<3?ease(clamp(u/1.2)):0, steps=n+(n<3?moveU:0);
+  const jx=BAY0+NB0*BAYW+2+steps*BAYW;
+  $('jigB').setAttribute('transform',`translate(${jx},0)`);
+  bayEls.forEach((g,i)=>{if(i<NB0)return;const j=i-NB0;let o=0;if(j<n)o=1;else if(j===n&&n<3)o=clamp((u-.4)/1.4);g.setAttribute('opacity',o);});
+  const sl=$('stepLbl');sl.setAttribute('x',jx-48);sl.setAttribute('opacity',n<3&&u>.3&&u<1.6?1:0);
+ }
+
+ if(inC){
+  const tau=t-T.over, g=ease(clamp(tau/5))*30, spin=tau>5.2?(tau-5.2)*22:0;
+  let d='';for(let i=0;i<6;i++){const c=i*60-90;if(g<=0)continue;const [x1,y1]=[RC.x+RC.r*Math.cos(rad(c-g)),RC.y+RC.r*Math.sin(rad(c-g))],[x2,y2]=[RC.x+RC.r*Math.cos(rad(c+g)),RC.y+RC.r*Math.sin(rad(c+g))];d+=`M${x1} ${y1} A${RC.r} ${RC.r} 0 0 1 ${x2} ${y2} `;}
+  if(g>=29.99)d=`M${RC.x+RC.r} ${RC.y} A${RC.r} ${RC.r} 0 1 1 ${RC.x-RC.r} ${RC.y} A${RC.r} ${RC.r} 0 1 1 ${RC.x+RC.r} ${RC.y}`;
+  $('ringGrow').setAttribute('d',d);
+  $('ringC').setAttribute('transform',`rotate(${spin} ${RC.x} ${RC.y})`);
+  $('factories').setAttribute('opacity',tau<5?1:0);
+  $('spinArrow').setAttribute('opacity',tau>5.2?1:0);$('spinLbl').setAttribute('opacity',tau>5.2?1:0);
+ }
+
+ // UI
+ let si=0;STEPS.forEach((s,i)=>{if(t>=s.t)si=i;});
+ stepBtns.forEach((b,i)=>b.setAttribute('aria-current',i===si?'step':'false'));
+ if(curStep!==si){curStep=si;$('capTitle').textContent=STEPS[si].title;$('capText').textContent=STEPS[si].text;}
+ $('scrub').value=Math.round(t/T.total*1000);
+ const s=Math.floor(t);$('clock').textContent=`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+}
+
+/* ---------- controls ---------- */
+let curStep=-1;
+const stepBtns=STEPS.map((s,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML=`<span>${i+1}</span><b>${s.n.toUpperCase()}</b>`;b.addEventListener('click',()=>{t=s.t+.01;render();});$('steps').appendChild(b);return b;});
+$('play').addEventListener('click',()=>{playing=!playing;last=null;$('play').textContent=playing?'PAUSE':'PLAY';});
+$('speed').addEventListener('click',()=>{speed=speed===1?2:speed===2?0.5:1;$('speed').textContent=`SPEED ${speed===0.5?'½':speed}×`;});
+$('scrub').addEventListener('input',e=>{t=e.target.value/1000*T.total;render();});
+$('play').textContent=playing?'PAUSE':'PLAY';
+
+function frame(ts){if(playing){if(last!==null){t+=(ts-last)/1000*speed;if(t>=T.total)t=0;}last=ts;render();}else last=null;requestAnimationFrame(frame);}
+render();requestAnimationFrame(frame);
+})();
+</script>

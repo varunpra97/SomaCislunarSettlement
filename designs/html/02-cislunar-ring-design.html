@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cislunar Ring Design Study</title>
+
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>body{width:2400px;height:1600px;overflow:hidden} h1{font-size:44px !important;letter-spacing:0.24em !important}
+body{margin:0}
+a{color:#d9b36a}a:hover{color:#f0d29a}
+.stars{background-image:radial-gradient(1px 1px at 12% 18%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 37% 72%,#d8d4ff 50%,transparent 51%),radial-gradient(1.5px 1.5px at 64% 33%,#ffffff 50%,transparent 51%),radial-gradient(1px 1px at 83% 61%,#fff3d6 50%,transparent 51%),radial-gradient(1px 1px at 52% 91%,#ffffff 50%,transparent 51%);background-size:310px 230px,410px 290px,520px 370px,270px 330px,460px 250px}
+.spec{display:grid;grid-template-columns:170px minmax(0,1fr);gap:8px 16px;margin:0;font-size:13px}
+.spec dt{color:#b8ab8e;letter-spacing:0.12em;text-transform:uppercase;font-size:11px;padding-top:2px}
+.spec dd{margin:0;color:#ece6d8}
+.bom{width:100%;border-collapse:collapse;font-size:13px}
+.bom th{text-align:left;font-weight:500;font-size:11px;letter-spacing:0.12em;color:#b8ab8e;padding:8px 10px;border-bottom:1px solid #6b6252}
+.bom td{padding:9px 10px;border-bottom:1px solid #2a261e;vertical-align:top;color:#ece6d8}
+.svgtxt{font-family:'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0.08em}
+</style>
+
+<div class="stars" style="position: relative; width: 2400px; height: 1600px; overflow: hidden; background-color: #0a0b10; font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #e8e2d4">
+
+<div style="position: absolute; left: 40px; top: 40px; width: 2320px; height: 820px; display: grid; grid-template-columns: 700px 800px minmax(0, 1fr); gap: 20px">
+
+<section style="border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">A</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">TOP VIEW</h2>
+</div>
+<svg class="svgtxt" width="698" height="560" viewBox="0 0 698 560" role="img" aria-label="Top view of the ring: a habitat tube 17 km in radius joined to a central hub by six spokes, wrapped in a static shield">
+<defs><marker id="aSpin" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#f0b860"/></marker></defs>
+<circle cx="349" cy="285" r="210" fill="none" stroke="#4a4232" stroke-width="46"/>
+<circle cx="349" cy="285" r="210" fill="none" stroke="#f0b860" stroke-width="26" opacity="0.92"/>
+<circle cx="349" cy="285" r="210" fill="none" stroke="#1a1206" stroke-width="1.5" stroke-dasharray="10 16"/>
+<g stroke="#f0b860" stroke-width="3"><line x1="349" y1="257" x2="349" y2="87"/><line x1="373" y1="299" x2="520" y2="384"/><line x1="325" y1="299" x2="178" y2="384"/><line x1="349" y1="313" x2="349" y2="483"/><line x1="373" y1="271" x2="520" y2="186"/><line x1="325" y1="271" x2="178" y2="186"/></g>
+<circle cx="349" cy="285" r="28" fill="#10131c" stroke="#f0b860" stroke-width="2.5"/>
+<circle cx="349" cy="285" r="11" fill="#66c2d4"/>
+<path d="M548 132 A262 262 0 0 1 606 236" fill="none" stroke="#f0b860" stroke-width="2" marker-end="url(#aSpin)"/>
+<line x1="349" y1="285" x2="200" y2="434" stroke="#e8e2d4" stroke-width="1" stroke-dasharray="4 4"/>
+<text x="150" y="470" font-size="13" fill="#e8e2d4">R = 17.35 km</text>
+<text x="384" y="270" font-size="11" fill="#66c2d4">HUB · DOCK</text>
+<text x="420" y="138" font-size="11" fill="#e8e2d4">SPOKE</text>
+<text x="574" y="300" font-size="11" fill="#f0b860">TUBE</text>
+<text x="574" y="316" font-size="11" fill="#b8ab8e">+ SHIELD</text>
+<text x="612" y="214" font-size="11" fill="#f0b860">SPIN</text>
+</svg>
+<div style="padding: 0 18px 18px">
+<dl class="spec">
+<dt>Circumference</dt><dd>≈109 km, about 1,000 ISS lengths</dd>
+<dt>Spin</dt><dd>1 g at 0.23 rpm, one turn every 4.4 min</dd>
+<dt>Rim speed</dt><dd>≈412 m/s</dd>
+<dt>Hub</dt><dd>Non-spinning dock, zero-g industry</dd>
+<dt>Spokes</dt><dd>Elevators, power and data</dd>
+</dl>
+</div>
+</section>
+
+<section style="border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">B</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">TUBE CROSS-SECTION</h2>
+</div>
+<svg class="svgtxt" width="798" height="760" viewBox="0 0 798 760" role="img" aria-label="Cross-section of the 150 m habitat tube: static regolith shield with a light baffle, pressure hull, window strip, floor with soil and buildings, and fibre hoop bands">
+<defs><marker id="aDown" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e8e2d4"/></marker></defs>
+<path d="M455.2 113.3 A220 220 0 1 1 304.8 113.3" fill="none" stroke="#6b6252" stroke-width="30"/>
+<polyline points="296,112 326,80 350,112 380,80 410,112 434,80 464,112" fill="none" stroke="#8a806c" stroke-width="7" stroke-linejoin="round"/>
+<circle cx="380" cy="320" r="180" fill="#16233a" stroke="#f0b860" stroke-width="4"/>
+<path d="M318.4 150.9 A180 180 0 0 1 441.6 150.9" fill="none" stroke="#7fd6ec" stroke-width="7"/>
+<path d="M237.5 430 L522.5 430 A180 180 0 0 1 237.5 430 Z" fill="#4d3b28"/>
+<line x1="237.5" y1="430" x2="522.5" y2="430" stroke="#6f8b52" stroke-width="6"/>
+<g fill="#d8cfbc"><rect x="262" y="404" width="18" height="24"/><rect x="288" y="392" width="14" height="36"/><rect x="410" y="398" width="22" height="30"/><rect x="440" y="408" width="14" height="20"/><rect x="470" y="400" width="16" height="28"/></g>
+<g fill="#6f8b52"><circle cx="330" cy="418" r="9"/><circle cx="350" cy="414" r="11"/><circle cx="374" cy="418" r="9"/><circle cx="496" cy="418" r="8"/></g>
+<g fill="#d8c9a8" stroke="#1a1206" stroke-width="1"><circle cx="335" cy="510" r="7"/><circle cx="350" cy="512" r="7"/><circle cx="365" cy="513" r="7"/><circle cx="380" cy="513" r="7"/><circle cx="395" cy="513" r="7"/><circle cx="410" cy="512" r="7"/><circle cx="425" cy="510" r="7"/></g>
+<line x1="380" y1="300" x2="380" y2="200" stroke="#66c2d4" stroke-width="1.2" stroke-dasharray="3 4"/>
+<text x="392" y="214" font-size="11" fill="#66c2d4">↑ TO HUB · 17.3 km</text>
+<text x="300" y="300" font-size="12" fill="#e8e2d4">AIR · 50 kPa</text>
+<text x="300" y="318" font-size="11" fill="#b8ab8e">O₂ 21 · N₂ 29 kPa</text>
+<line x1="120" y1="140" x2="120" y2="500" stroke="#e8e2d4" stroke-width="1"/>
+<line x1="112" y1="140" x2="128" y2="140" stroke="#e8e2d4"/><line x1="112" y1="500" x2="128" y2="500" stroke="#e8e2d4"/>
+<text x="64" y="324" font-size="13" fill="#e8e2d4">150 m</text>
+<line x1="660" y1="300" x2="660" y2="390" stroke="#e8e2d4" stroke-width="1.5" marker-end="url(#aDown)"/>
+<text x="604" y="420" font-size="11" fill="#e8e2d4">1 g · DOWN =</text>
+<text x="604" y="436" font-size="11" fill="#e8e2d4">AWAY FROM HUB</text>
+<g font-size="11">
+<line x1="470" y1="88" x2="560" y2="60" stroke="#8a806c"/><text x="566" y="56" fill="#e8e2d4">CHEVRON LIGHT BAFFLE</text><text x="566" y="72" fill="#b8ab8e">light in, cosmic rays out</text>
+<line x1="442" y1="150" x2="560" y2="118" stroke="#7fd6ec"/><text x="566" y="122" fill="#7fd6ec">WINDOW STRIP</text>
+<line x1="590" y1="214" x2="620" y2="190" stroke="#6b6252"/><text x="626" y="180" fill="#e8e2d4">STATIC SHIELD</text><text x="626" y="196" fill="#b8ab8e">~3 m regolith,</text><text x="626" y="212" fill="#b8ab8e">does not spin</text>
+<line x1="556" y1="290" x2="620" y2="270" stroke="#f0b860"/><text x="626" y="262" fill="#f0b860">PRESSURE HULL</text><text x="626" y="278" fill="#b8ab8e">Al / steel panels</text>
+<line x1="440" y1="470" x2="560" y2="560" stroke="#4d3b28"/><text x="566" y="564" fill="#e8e2d4">SOIL · 0.5 m</text>
+<line x1="430" y1="514" x2="520" y2="610" stroke="#d8c9a8"/><text x="526" y="614" fill="#d8c9a8">HOOP BANDS</text><text x="526" y="630" fill="#b8ab8e">basalt fibre, carry the spin load</text>
+</g>
+<text x="40" y="700" font-size="12" fill="#b8ab8e">Floor ≈100 m wide × 109 km ≈ 11 km² — roughly 150,000 people at Stanford-torus density</text>
+</svg>
+</section>
+
+<section style="border: 1px solid #2f4a50; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #2f4a50">
+<span style="background-color: #66c2d4; color: #06181c; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">C</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #66c2d4">WHERE THE MATERIALS COME FROM</h2>
+</div>
+<svg class="svgtxt" width="798" height="560" viewBox="0 0 798 560" role="img" aria-label="Sourcing map: bulk material launched from the Moon by mass driver, water, carbon, nitrogen and metal from captured near-Earth asteroids, and small high-tech items from Earth">
+<defs>
+<radialGradient id="sEarth" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#7cc4ef"/><stop offset="0.6" stop-color="#2f7fbf"/><stop offset="1" stop-color="#174a7a"/></radialGradient>
+<radialGradient id="sMoon" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#f2f0ea"/><stop offset="1" stop-color="#8f8c83"/></radialGradient>
+<marker id="aG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d9b36a"/></marker>
+<marker id="aC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#66c2d4"/></marker>
+<marker id="aW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#e8e2d4"/></marker>
+</defs>
+<circle cx="90" cy="230" r="54" fill="url(#sEarth)"/>
+<text x="56" y="310" font-size="13" font-weight="600" fill="#e8e2d4">EARTH</text>
+<ellipse cx="330" cy="230" rx="46" ry="18" fill="none" stroke="#f0b860" stroke-width="9"/>
+<text x="290" y="276" font-size="12" font-weight="600" fill="#f0b860">THE RING</text>
+<circle cx="640" cy="150" r="46" fill="url(#sMoon)"/>
+<circle cx="626" cy="138" r="8" fill="#8a877e" opacity="0.6"/><circle cx="656" cy="168" r="6" fill="#8a877e" opacity="0.6"/>
+<line x1="600" y1="128" x2="560" y2="100" stroke="#f0b860" stroke-width="3"/>
+<text x="604" y="222" font-size="13" font-weight="600" fill="#e8e2d4">THE MOON</text>
+<path d="M590 160 Q470 200 386 222" fill="none" stroke="#d9b36a" stroke-width="3" stroke-dasharray="9 6" marker-end="url(#aG)"/>
+<text x="430" y="150" font-size="11" fill="#d9b36a">MASS DRIVER</text>
+<text x="430" y="166" font-size="11" fill="#b8ab8e">~95% of the mass</text>
+<g><path d="M620 420 q14 -18 30 -6 q12 14 -4 26 q-20 8 -26 -20 z" fill="#3c3a36" stroke="#6b6252"/><path d="M680 460 q8 -10 18 -4 q8 8 -2 16 q-12 4 -16 -12 z" fill="#b9b6ae"/><path d="M590 470 q6 -8 14 -3 q6 6 -2 12 q-9 3 -12 -9 z" fill="#4a4740"/></g>
+<text x="560" y="510" font-size="13" font-weight="600" fill="#e8e2d4">NEAR-EARTH ASTEROIDS</text>
+<text x="560" y="528" font-size="11" fill="#b8ab8e">pushed into lunar orbit</text>
+<path d="M600 418 Q470 360 372 248" fill="none" stroke="#66c2d4" stroke-width="2.5" stroke-dasharray="9 6" marker-end="url(#aC)"/>
+<text x="430" y="380" font-size="11" fill="#66c2d4">WATER · C · N · Ni-Fe</text>
+<path d="M148 230 L276 230" fill="none" stroke="#e8e2d4" stroke-width="1.5" stroke-dasharray="2 5" marker-end="url(#aW)"/>
+<text x="150" y="214" font-size="11" fill="#e8e2d4">CHIPS · LIFE</text>
+<text x="150" y="252" font-size="11" fill="#b8ab8e">&lt;1% of mass</text>
+<text x="40" y="404" font-size="11" fill="#b8ab8e">ESCAPE VELOCITY</text>
+<rect x="40" y="416" width="448" height="14" fill="#2f7fbf"/><text x="40" y="448" font-size="11" fill="#e8e2d4">EARTH 11.2 km/s</text>
+<rect x="40" y="462" width="96" height="14" fill="#c9c5ba"/><text x="40" y="494" font-size="11" fill="#e8e2d4">MOON 2.4 km/s → ~22× less energy per kg</text>
+</svg>
+<div style="margin: 0 18px 18px; padding: 14px 16px; border: 1px solid #2f4a50; display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #66c2d4">ASTEROIDS ORBITING EARTH?</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #ece6d8">Earth only has temporary "mini-moons" a few metres wide (2020 CD3, 2024 PT5), thousands of tonnes at most. The quasi-satellite Kamo'oalewa (~40–100 m) stays near Earth but orbits the Sun. None come close to the ~300 Mt this build needs, so the plan captures larger near-Earth asteroids like Bennu- or Ryugu-class bodies instead.</p>
+</div>
+</section>
+</div>
+
+<div style="position: absolute; left: 40px; top: 880px; width: 2320px; height: 570px; display: grid; grid-template-columns: 1520px minmax(0, 1fr); gap: 20px">
+
+<section style="border: 1px solid #4a4232; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #4a4232">
+<span style="background-color: #f0b860; color: #1a1206; font-size: 12px; font-weight: 600; padding: 3px 8px; letter-spacing: 0.1em">D</span>
+<h2 style="margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.16em; color: #f0b860">BILL OF MATERIALS · ~300 MILLION TONNES</h2>
+</div>
+<div style="padding: 6px 16px 12px">
+<table class="bom">
+<thead><tr><th style="width: 240px">COMPONENT</th><th style="width: 110px">MASS</th><th style="width: 250px">MATERIAL</th><th style="width: 280px">FROM THE MOON</th><th style="width: 250px">FROM ASTEROIDS</th><th>NOTE</th></tr></thead>
+<tbody>
+<tr><td>Radiation shield</td><td>~260 Mt</td><td>Raw regolith, slag</td><td>Any surface regolith</td><td>—</td><td>~4.5 t/m²; static, so no spin load</td></tr>
+<tr><td>Hoop tension bands</td><td>~18 Mt</td><td>Basalt / glass fibre</td><td>Mare basalt, melted and drawn</td><td>—</td><td>Holds the ring together while spinning</td></tr>
+<tr><td>Pressure hull, frames</td><td>~4 Mt</td><td>Aluminium, steel, titanium</td><td>Highland anorthosite (Al), ilmenite (Fe, Ti)</td><td>M-type nickel-iron</td><td>Panels hang from the fibre bands</td></tr>
+<tr><td>Soil, interiors</td><td>~15 Mt</td><td>Regolith + organics</td><td>Sieved regolith</td><td>C-type carbon, organics</td><td>0.5 m growing layer</td></tr>
+<tr><td>Water</td><td>~5 Mt</td><td>H₂O</td><td>Polar crater ice</td><td>C-type (hydrated clays)</td><td>Farms, lakes, reserves</td></tr>
+<tr><td>Oxygen</td><td>~0.5 Mt</td><td>O₂</td><td>~40% of regolith by mass</td><td>—</td><td>Byproduct of refining metals</td></tr>
+<tr><td style="color: #66c2d4">Nitrogen</td><td style="color: #66c2d4">~0.6 Mt</td><td>N₂</td><td>Solar-wind traces only</td><td>C-type (~0.1–0.2%)</td><td>The bottleneck, see right</td></tr>
+<tr><td>Windows, mirrors, solar</td><td>~1 Mt</td><td>Glass, silicon, aluminium</td><td>Regolith silica, Al</td><td>—</td><td>Mirrors feed the window strip</td></tr>
+<tr><td>Electronics, biology</td><td>&lt;0.1 Mt</td><td>Chips, seeds, microbes</td><td>—</td><td>M-type platinum metals, later</td><td>From Earth to start</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #f0b860">STEEL CAN'T HOLD THIS SPIN</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #ece6d8">At 412 m/s a spinning hoop must carry ρv² of its own mass. That's about 1.3 GPa for steel, beyond its working limit, but only about 0.46 GPa for basalt fibre, which leaves room for the habitat load.</p>
+</div>
+<div style="border: 1px solid #2f4a50; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #66c2d4">NITROGEN IS THE SCARCE GAS</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #ece6d8">The Moon has almost none. At 0.1–0.2% in carbon-rich asteroids, filling the air needs about a Ryugu-sized body, or Earth shipments, or a lower-pressure, oxygen-richer mix.</p>
+</div>
+<div style="border: 1px solid #4a4232; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; color: #f0b860">LAUNCH FROM THE MOON</p>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #ece6d8">With no air and low gravity, an electric mass driver can throw regolith to the ring for about 0.8 kWh per kilogram, with no rocket fuel.</p>
+</div>
+</section>
+</div>
+
+<div style="position: absolute; left: 40px; top: 1470px; width: 2320px; height: 100px; display: flex; gap: 20px">
+<div style="flex: 1 1 auto; border: 2px solid #e8e2d4; display: flex; align-items: center; padding: 0 40px">
+<h1 style="margin: 0; font-size: 54px; font-weight: 500; letter-spacing: 0.32em; color: #f3eee2; white-space: nowrap">CISLUNAR RING · DESIGN STUDY</h1>
+</div>
+<div style="flex: 0 0 520px; border: 1px solid #4a4232; padding: 12px 16px; display: flex; flex-direction: column; justify-content: center; gap: 6px">
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">ORDER-OF-MAGNITUDE ESTIMATES</p>
+<p style="margin: 0; font-size: 11px; letter-spacing: 0.12em; color: #b8ab8e">SPECULATIVE CONCEPT · NOT TO SCALE</p>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>
