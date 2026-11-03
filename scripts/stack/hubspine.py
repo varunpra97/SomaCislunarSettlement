@@ -16,42 +16,63 @@ def gauge(ctx,t,label_='AXIS: ALONG ORBIT NORMAL',wob=1.0,a=1):
     text(ctx,label_,x,y+62,10,MUT,anchor='c',a=a,spacing=1)
     text(ctx,'held to ±0.1°',x,y+76,10,GOLD,anchor='c',a=a)
 
+SL=91  # one Starship body, px, in the close-up
+def core_chain(ctx,x0,n,y=Y,a=1,s=.35):
+    """n Starships docked nose to tail, noses pointing left, starting at x0."""
+    for i in range(n): ship(ctx,x0+i*SL,y,s,a=a*.92)
+def core_band(ctx,x0,x1,y=Y,h=8,a=1):
+    if x1<=x0: return
+    col(ctx,SHIP,a*.9); ctx.rectangle(x0,y-h/2,x1-x0,h); ctx.fill()
+    col(ctx,'#8f8a7e',a); ctx.set_line_width(1)
+    x=x0
+    while x<x1: ctx.move_to(x,y-h/2); ctx.line_to(x,y+h/2); x+=6
+    ctx.stroke()
+
 def c1(ctx,t,dur):
     background(ctx); head(ctx)
-    u=ease(seg(t,0,3)); sx=lerp(1400,700,u)
-    ship(ctx,sx,Y-90,.6,door=1)
-    core=seg(t,3,5)
-    if core>0:
-        cx0=lerp(sx+60,580,ease(core)); truss_h(ctx,cx0,cx0+120,Y,30,CY,step=12)
-    tg=ease(seg(t,5,8))
-    if t>5:
-        xl=580; xr=700
-        ship(ctx,lerp(xl-TL-500,xl-TL,tg),Y,.35); ship(ctx,lerp(xr+TL+500,xr+TL,tg),Y,.35,flip=True)
-        if tg>=1: puff(ctx,xl-40,Y-8,0,-1,t,0); puff(ctx,xr+40,Y+8,0,1,t,3)
-    label(ctx,'CARGO STARSHIP with the spine core',860,170,sx+150,Y-95,FG,a=seg(t,1,2))
-    label(ctx,'SPINE CORE · 200 m truss + docks',520,480,640,Y+16,CY,a=seg(t,4.5,5.5))
-    label(ctx,'TUG STARSHIPS dock at both ends',140,200,500,Y-8,GOLD,a=seg(t,7,8))
-    caption(ctx,'1 · THE SPINE STARTS AS ONE CORE','A cargo Starship sets out the first spine section with docking ports. Two tug Starships latch onto its ends: from now on they steer the structure, holding its attitude and position with small thruster pulses.')
+    x0=150; N=11; per=.85; t0=.8
+    n=max(0,min(N,int((t-t0)/per)))
+    core_chain(ctx,x0,n)
+    if n<N and t>t0:
+        u=ease(((t-t0)%per)/per); xa=lerp(1400,x0+n*SL,u)
+        ship(ctx,xa,Y,.35); 
+        if u>.9: ctx.arc(x0+n*SL,Y,5,0,2*math.pi); col(ctx,SPARK,.8); ctx.fill()
+    if n>=1:
+        puff(ctx,x0-6,Y,-1,0,t,1); puff(ctx,x0+30,Y-8,0,-1,t,0)
+    if n>=2:
+        xr=x0+n*SL; puff(ctx,xr-20,Y+8,0,1,t,3)
+    readout(ctx,'STARSHIPS IN THE SPINE',f'{n}',60,110,w=230)
+    readout(ctx,'LENGTH',f'{n*50} m',300,110,CY,w=150)
+    label(ctx,'each Starship docks nose to tail and stays',560,210,x0+SL*3.5,Y-8,FG,a=seg(t,2,3))
+    label(ctx,'the end ships keep their engines: they steer',140,470,x0+20,Y+8,GOLD,a=seg(t,4,5))
+    label(ctx,'inside: one pressurised corridor, 9 m across',620,470,x0+SL*5.5,Y+8,CY,a=seg(t,6,7))
+    caption(ctx,'1 · THE SPINE IS MADE OF STARSHIPS','Instead of building a truss, cargo Starships unload and then dock nose to tail along the spin axis. Their stripped hulls become the spine\'s core, and the ships at each end keep their engines to steer it.')
     fade(ctx,t,dur)
 
 def c2(ctx,t,dur):
     background(ctx); head(ctx); tag(ctx,'TIME-LAPSE',880,110)
-    f=ease(seg(t,.8,10)); xl=lerp(580,170,f); xr=lerp(700,1110,f)
-    truss_h(ctx,xl,xr,Y,30,CY,step=14)
-    for x in (xl,xr): ctx.rectangle(x-5,Y-18,10,36); col(ctx,GOLD); ctx.fill()
+    f=ease(seg(t,.8,8.5)); xl=lerp(600,170,f); xr=lerp(680,1110,f)
+    core_band(ctx,xl,xr)
     tugs(ctx,xl,xr,t)
     gauge(ctx,t)
-    km=lerp(.2,14,f)
-    readout(ctx,'SPINE LENGTH',f'{km:4.1f} km',60,110)
-    label(ctx,'EXTRUDER HEADS at both tips',260,470,xl+5,Y+18,GOLD,a=seg(t,1.5,2.5))
-    label(ctx,'tugs move out with the tips',620,520,xr+40,Y+10,FG,a=seg(t,3,4))
-    caption(ctx,'2 · THE SPINE GROWS BOTH WAYS','Extruders at both tips lay truss bays, fed by cargo ships, until the spine is 14 km long (~1 Mt). Pointed along the orbit\'s normal, a long body like this is naturally stable, so the tugs only trim it.')
+    n=int(lerp(11,280,f))
+    readout(ctx,'STARSHIPS IN THE SPINE',f'{n}',60,110,w=230)
+    readout(ctx,'LENGTH',f'{n*0.05:4.1f} km',300,110,CY,w=150)
+    label(ctx,'280 hulls · ~30 kt of steel · 14 km',420,470,(xl+xr)/2,Y+6,SHIP,a=seg(t,2,3))
+    label(ctx,'end Starships, drawn larger',820,520,xr+40,Y+10,GOLD,a=seg(t,3,4))
+    caption(ctx,'2 · 280 SHIPS LATER, A 14 km CORE','Each delivery flight ends by adding its ship to the spine. The bare hulls hold only about 0.02% of the bending load the spine will need once rings spin, so for now it only has to carry the gentle steering loads of the build.')
     fade(ctx,t,dur)
 
 def c3(ctx,t,dur):
     background(ctx); head(ctx); tag(ctx,'ONE CENTRE POD · CLOSE UP',1040,110)
     yc=330; x0,x1=460,820; y0,y1=yc-160,yc+160
-    truss_h(ctx,0,1280,yc,150,CYD,step=40,lw=2)
+    core_band(ctx,0,1280,yc,h=10)
+    col(ctx,CY,.35); ctx.set_line_width(1); ctx.set_dash([4,6]); ctx.rectangle(0,yc-80,1280,160); ctx.stroke(); ctx.set_dash([])
+    text(ctx,'room left for drums later (r 100 m)',60,yc-88,11,CY,a=.8)
+    for xs_ in (x0+12,x1-12):
+        col(ctx,STEEL,.8); ctx.set_line_width(2)
+        for yy in (yc-80,yc+80): ctx.move_to(xs_,yc); ctx.line_to(xs_,yy)
+        ctx.stroke()
     # bearings
     b=seg(t,.5,3.2)
     for bx in (x0+12,x1-12):
@@ -88,7 +109,8 @@ def c3(ctx,t,dur):
     label(ctx,'MOTOR RING spins the ring against its twin',830,560,636,y1-5,GOLD,a=seg(t,3.5,4.3))
     label(ctx,'HUB DRUM Ø 400 m',880,140,x1-5,y0+5,FG,a=seg(t,6,7))
     label(ctx,'6 SPOKE SOCKETS',150,560,560,yc+215,CY,a=seg(t,9.5,10.5))
-    caption(ctx,'3 · BUILDING ONE CENTRE POD AROUND THE SPINE','Arms riding the spine set two magnetic bearings, a motor ring and the drum shell, then six spoke sockets and a lock into the spine. The pod spins with its ring; the spine stays still.')
+    label(ctx,'STARSHIP CORE · 9 m',90,yc+130,200,yc+5,SHIP,a=seg(t,.5,1.5))
+    caption(ctx,'3 · BUILDING ONE CENTRE POD AROUND THE CORE','Arms riding the Starship core set two magnetic bearings on a frame, a motor ring and the drum shell, then six spoke sockets and a lock into the corridor. The pod spins with its ring; the spine stays still.')
     fade(ctx,t,dur)
 
 HX=[260,400,540,740,880,1020]
@@ -96,7 +118,7 @@ def pod(ctx,x,a=1,s=1):
     col(ctx,PANEL,.85*a); ctx.rectangle(x-14*s,Y-34*s,28*s,68*s); ctx.fill()
 def c4(ctx,t,dur):
     background(ctx); head(ctx)
-    truss_h(ctx,170,1110,Y,30,CY,step=14)
+    core_band(ctx,170,1110)
     tugs(ctx,170,1110,t); gauge(ctx,t)
     n=0
     for i,x in enumerate(HX):
@@ -115,15 +137,43 @@ def c4(ctx,t,dur):
     caption(ctx,'4 · SIX PODS FOR THREE RING PAIRS','Pods go on 2 km apart. Neighbouring rings will spin in opposite directions, so each pair cancels its spin and the spine as a whole can be turned easily. The tugs keep steering while the mass grows.')
     fade(ctx,t,dur)
 
+DR=[20,40,60,80,100]
+def c4b(ctx,t,dur):
+    background(ctx); head(ctx); tag(ctx,'A SECTION OF SPINE · LATER',990,110)
+    yc=330; k=1.5  # px per m
+    x0,x1=120,1160
+    cum=0.0; m=0.0; need=397.9
+    for i,r in enumerate(DR):
+        f=ease(seg(t,.8+i*1.6,2.2+i*1.6))
+        if f<=0: continue
+        xe=lerp(x0,x1,f)
+        for sg in (-1,1):
+            yy=yc+sg*r*k
+            col(ctx,PANEL if i%2==0 else '#a99b7f',.85); ctx.rectangle(x0,yy-3 if sg<0 else yy,xe-x0,3); ctx.fill()
+        col(ctx,CY,.12); ctx.rectangle(x0,yc-r*k,xe-x0,2*r*k); ctx.fill()
+        if f<1:
+            for sg in (-1,1):
+                ctx.rectangle(xe-10,yc+sg*r*k-8,20,16); col(ctx,GOLD); ctx.fill()
+        cum+=r*r*0.02*f; m+=2*math.pi*r*0.02*2700*f
+    core_band(ctx,0,1280,yc,h=max(8,9*k))
+    pct=cum/need*100
+    readout(ctx,'BENDING STRENGTH vs NEEDED',f'{max(pct,0.02):5.1f} %',60,110,GOLD if pct<100 else GREEN,w=260)
+    readout(ctx,'SPINE MASS',f'{m*14000/1e9:4.2f} Mt',330,110,CY,w=170)
+    label(ctx,'STARSHIP CORE',140,yc+40,200,yc+6,SHIP,a=seg(t,.3,1))
+    label(ctx,'5 CONCENTRIC DRUMS, r 20 to 100 m, ~2 cm walls',700,560,900,yc+100*k,PANEL,a=seg(t,3,4))
+    caption(ctx,'5 · LATER: CONCENTRIC DRUMS OVER THE STARSHIP CORE','Crawlers wrap drum after drum around the original hulls. Strength grows with the square of the radius, so five thin drums out to 100 m carry the Sun-tracking loads once the rings spin, for ~1.4 Mt.')
+    fade(ctx,t,dur)
+
 def c5(ctx,t,dur):
     card(ctx,'THE CENTRE POD AND THE SPINE',[
-        ('Spine','14 km non-rotating truss, ~200 m across, ~1 Mt of lunar aluminium and basalt fibre'),
-        ('Steering','2–4 tug Starships at the tips: attitude, position and damping during the build'),
-        ('Build attitude','Axis along the orbit normal: a stable attitude, so tugs only trim (~12 t propellant a day at ±0.1°)'),
-        ('Centre pod','Ø 400 m drum, 500 m long: 2 magnetic bearings, motor ring, 6 spoke sockets, lock'),
-        ('Loads','Tracking the Sun puts ~2.5 × 10¹¹ N·m on each pod: ~0.5 GN on its bearings'),
-        ('Spin-up','Motor ring pushes each ring against its twin through the spine: ~70 days at 2.5 GW'),
+        ('Spine core','280 Starships nose to tail: 14 km, one 9 m pressurised corridor'),
+        ('Spine ships','A spine-only variant can drop the heat shield, flaps and legs'),
+        ('Spine drums','Later, 5 concentric drums out to r 100 m: ~1.4 Mt'),
+        ('Why drums','A 9 m core holds 0.02% of the load (≤0.5% with a composite hull)'),
+        ('Steering','The end Starships keep their engines during the build'),
+        ('Centre pod','Ø 400 m drum: 2 magnetic bearings, motor ring, 6 spoke sockets'),
+        ('Spin-up','Each ring pushes against its twin through the spine: ~70 days'),
     ],t,dur,'order-of-magnitude design study')
 
-SCENES=[('sc1',c1,9),('sc2',c2,11),('sc3',c3,13.5),('sc4',c4,11),('sc5',c5,7)]
+SCENES=[('sc1',c1,12),('sc2',c2,10),('sc3',c3,13.5),('sc4',c4,11),('sc4b',c4b,10.5),('sc5',c5,7)]
 if __name__=='__main__': main(SCENES,'centre-pod-and-spine')

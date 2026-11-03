@@ -9,7 +9,7 @@
 
 https://github.com/user-attachments/assets/a68c558e-4816-4515-9c97-f966b7a21b6e
 
-<p align="center"><b>How Soma is built</b> (5 min 44 s) · <a href="videos/soma-construction-film.mp4">download the MP4</a></p>
+<p align="center"><b>How Soma is built</b> (5 min 57 s) · <a href="videos/soma-construction-film.mp4">download the MP4</a></p>
 
 A speculative design study for space settlements: a cislunar ring for about 550,000 people, six of them stacked on one shared spine, built from Starship-sized hull units, lunar material and self-assembling bay factories, and parked in a stable orbit around the Moon. The study also sketches two Sun-orbiting rings (between Earth and Mars, and in the asteroid belt).
 
@@ -19,15 +19,15 @@ All figures are order-of-magnitude estimates for a concept, not engineering resu
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> The film: how Soma is built
 
-Every construction animation in build order, from the spine to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 44 s). It plays at the top of this page; click the preview below to open the MP4 file.
+Every construction animation in build order, from the spine to the finished six-ring stack, ending with a zoom out to its orbit around the Moon (5 min 57 s). It plays at the top of this page; click the preview below to open the MP4 file.
 
 [![How Soma is built](docs/soma-construction-film.gif)](videos/soma-construction-film.mp4)
 
 
 ## <img src="assets/logo/soma-mark-dark.png" height="28" align="top"> Construction, step by step
 
-### 1 · The spine and centre pods (52 s)
-A cargo Starship sets out the spine core; tug Starships latch onto its ends and steer it while extruders grow it to 14 km. Robot arms then build a 400 m centre pod (magnetic bearings, motor ring, spoke sockets) for each ring.
+### 1 · The spine and centre pods (64 s)
+Cargo Starships unload and then dock nose to tail along the spin axis: 280 hulls make a 14 km core with one pressurised corridor, and the ships at each end keep their engines to steer it. Robot arms build a 400 m centre pod (magnetic bearings, motor ring, spoke sockets) for each ring. Later, five concentric drums wrapped over the Starship core make the spine strong enough to carry the Sun-tracking loads.
 
 [![The centre pod and the spine](docs/centre-pod-and-spine.gif)](videos/centre-pod-and-spine.mp4)
 
@@ -92,7 +92,8 @@ Full-size PNGs are in [`designs/png`](designs/png); standalone HTML versions are
 | Tube | 150 m across, 45 levels of 3.33 m, 606 cells of 180 m |
 | Population | ≈550,000 per ring with stacked homes; ≈3.3 million in a six-ring stack |
 | Atmosphere | 57 kPa, 34% O₂ (NASA exploration atmosphere) |
-| Mass | ~300 Mt per ring, mostly lunar regolith; ~1 Mt spine for a six-ring stack |
+| Mass | ~300 Mt per ring, mostly lunar regolith |
+| Spine | 280 Starships docked nose to tail (14 km core), later wrapped in 5 concentric drums out to r 100 m (~1.4 Mt) |
 | Middle ring | r 8.7 km, 0.5 g, Ø 40 m, ~0.5 Mt |
 | Stack | 6 rings (3 counter-rotating pairs) on a 14 km spine, 2 km apart |
 | Orbit | Lunar distant retrograde orbit, ~30,000 km from the Moon, 4.7-day loop |
